@@ -25,15 +25,16 @@
 
 ## Быстрый старт
 
-### 1. Клонируйте репозиторий
-
-```bash
-git clone https://github.com/your-username/tramplin.git
+### 1. Скачайте и разархивируйте репозиторий
+### 2. Через командную строку зайдите в папку проекта (нужен весь путь от диска C до места разархивации):
 cd tramplin
 
-cp .env.example .env
-
+### 3. Запустите через командную строку:
 docker-compose up -d
 
+### 4. Пользуйтесь!
 http://localhost:8080 — главная страница
-http://localhost:8081 — phpMyAdmin
+http://localhost:8081 — phpMyAdmin (логин: root, пароль: root)
+
+Логин куратора: curator@tramplin.ru
+Пароль куратора: curator123
