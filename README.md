@@ -32,6 +32,8 @@ cd tramplin
 ### 3. Запустите через командную строку:
 docker-compose up -d
 
+(или podman-compose up -d)
+
 ### 4. Пользуйтесь!
 http://localhost:8080 — главная страница
 
