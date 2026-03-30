@@ -34,7 +34,10 @@ docker-compose up -d
 
 ### 4. Пользуйтесь!
 http://localhost:8080 — главная страница
+
 http://localhost:8081 — phpMyAdmin (логин: root, пароль: root)
 
+
 Логин куратора: curator@tramplin.ru
+
 Пароль куратора: curator123
