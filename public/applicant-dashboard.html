@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link href="applicant-dashboard.css" type="text/css" rel="stylesheet"/>
+    <link rel="icon" href="фавикон.ico" type="image/x-icon">
+    <title>Личный кабинет</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <a href="index.html" style="cursor: pointer;"><img src="контент/logofordark.png" class="logo" alt="логотип"></a>
+            <p class="headtext" style="margin-top: 15px;">Вакансии</p>
+            <p class="headtext" style="margin-top: 15px;">Работодателям</p>
+            <form class="search-form" id="searchForm">
+                <input type="text" 
+                    class="search-input" 
+                    placeholder="Поиск вакансий, стажировок, мероприя..."
+                    id="searchInput">
+                <button type="submit" class="search-button">
+                    <img src="searchicon2.svg" alt="поиск" style="width: 68px; height: 48px;">
+                </button>
+            </form>
+            <img src="контент/favouriteicon.svg" alt="избранное" style="margin-right: 20px;">
+            <a href="login.html" style="cursor: pointer;"><img src="контент/accounticon.svg" alt="профиль"></a>
+        </div>
+    </header>
+    <main>
+        <div class="cab">
+            <div class="menu">
+                <button class="btn-custom selected" id="infoBtn" data-target="infoContent">Личная информация</button>
+                <button class="btn-custom" id="responseBtn" data-target="responseContent">Отклики</button>
+                <button class="btn-custom" id="favBtn" data-target="favContent">Избранное</button>
+                <button class="btn-custom" id="friendsBtn" data-target="friendsContent">Друзья</button>
+                <button class="btn-custom" id="privacyBtn" data-target="privacyContent">Приватность</button>
+            </div>
+            <div class="tab-content" id="infoContent" style="display: contents;">
+                <div class="horisont">
+                    <div class="vertical" style="width: 250px; margin: 0 55px 0 15px;">
+                        <p style="font-family: Unbounded; font-size: 20px; font-weight: 400; width: 172px; text-align: center; color:#9A84FF; margin: 0;">Соискатель</p>
+                        <div class="file-upload-container">
+                            <label class="file-upload-label" for="egrulFile">
+                                <img src="контент/cameraicon.svg" alt="камера"/>
+                                <span style="text-align: center; width: 138px; margin-top: 5px;">Загрузите изображение в разрешении 1080×1080</span>
+                                <input type="file" id="egrulFile" accept=".pdf,.jpg,.png,.doc,.docx" style="display: none;">
+                            </label>
+                            <div class="uploaded-file-info" id="uploadedFileInfo" style="display: none;">
+                                <span id="fileName"></span>
+                                <button class="remove-file-btn" id="removeFileBtn">×</button>
+                            </div>
+                            <p style="font-size: 13px; color:#6E6E6E; margin: 0px; text-align: center; width: 172px;">почта</p>
+                            <p style="font-size: 15px; color:#171717; margin-top: 6px; text-align: center; width: 172px; font-weight: 500;">Имя Фамилия</p>
+                        </div>
+                    </div>
+                    <div class="vertical">
+                        <label for="applicantLastName">Фамилия</label>
+                        <input type="text" class="form-input" placeholder="Фамилия из БД" id="applicantLastName">
+                        <label for="applicantFirstName">Имя</label>
+                        <input type="text" class="form-input" placeholder="Имя из БД" id="applicantFirstName">
+                        <label for="applicantPatronymic">Отчество (при наличии)</label>
+                        <input type="text" class="form-input" placeholder="Отчество из БД" id="applicantPatronymic">
+                        <label for="applicantUniversity">Учебное заведение</label>
+                        <input type="text" class="form-input" placeholder="Уник из БД" id="applicantUniversity">
+                        <label style="margin-bottom: 15px;">Навыки</label>
+                    </div>
+                    <div class="vertical">
+                        <label for="regEmail">Email</label>
+                        <input type="text" class="form-input" placeholder="Почта из БД" id="regEmail">
+                        <label for="applicantBirthDay">Дата рождения</label>
+                        <input type="text" class="form-input" placeholder="Заполните дату рождения" id="applicantBirthDay">
+                        <label for="applicantCity">Город</label>
+                        <input type="text" class="form-input" placeholder="Введите город проживания" id="applicantCity">
+                        <label for="applicantGraduationYear">Год окончания</label>
+                        <div class="horisont">
+                            <input type="text" class="form-input" placeholder="Год из БД" id="applicantGraduationYear" style="width: 180px;">
+                            <div class="checkbox-container">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="applicantStudyingNow">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">Учусь сейчас</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="horisont" style="margin-left: 280px; line-height: 1.2;">
+                    <p class="zag">Языки программирования</p>
+                    <div class="checkbox-container">
+                        <label class="checkbox-label">
+                            <input type="checkbox" data-skill="C#">
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">C#</span>
+                        </label>
+                    </div>
+                    <div class="checkbox-container">
+                        <label class="checkbox-label">
+                            <input type="checkbox" data-skill="JavaScript">
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">JavaScript</span>
+                        </label>
+                    </div>
+                    <div class="checkbox-container">
+                        <label class="checkbox-label">
+                            <input type="checkbox" data-skill="PHP">
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">PHP</span>
+                        </label>
+                    </div>
+                    <div class="checkbox-container">
+                        <label class="checkbox-label">
+                            <input type="checkbox" data-skill="Python">
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">Python</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="horisont" style="margin-left: 280px;">
+                    <p class="zag">Разработка баз данных</p>
+                    <div class="checkbox-container">
+                        <label class="checkbox-label">
+                            <input type="checkbox" data-skill="MySQL">
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">MySQL</span>
+                        </label>
+                    </div>
+                    
+                    <div class="checkbox-container">
+                        <label class="checkbox-label">
+                            <input type="checkbox" data-skill="PostgreSQL">
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">PostgreSQL</span>
+                        </label>
+                    </div>
+                    <div class="checkbox-container">
+                        <label class="checkbox-label">
+                            <input type="checkbox" data-skill="SQL">
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">SQL</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="horisont" style="margin-left: 280px;">
+                    <p class="zag">Data Science и аналитика</p>
+                    <div class="checkbox-container">
+                        <label class="checkbox-label">
+                            <input type="checkbox" data-skill="Excel">
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">Excel</span>
+                        </label>
+                    </div>
+                    
+                    <div class="checkbox-container">
+                        <label class="checkbox-label">
+                            <input type="checkbox" data-skill="NumPy">
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">NumPy</span>
+                        </label>
+                    </div>
+                    <div class="checkbox-container">
+                        <label class="checkbox-label">
+                            <input type="checkbox" data-skill="Pandas">
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">Pandas</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="horisont">
+                    <p class="zag" style="margin-left: 280px;">Мобильная разработка</p>
+                    <div class="checkbox-container">
+                        <label class="checkbox-label">
+                            <input type="checkbox" data-skill="Android (Kotlin)">
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">Android (Kotlin)</span>
+                        </label>
+                    </div>
+                    
+                    <div class="checkbox-container">
+                        <label class="checkbox-label">
+                            <input type="checkbox" data-skill="Flutter">
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">Flutter</span>
+                        </label>
+                    </div>
+                    <div class="checkbox-container">
+                        <label class="checkbox-label">
+                            <input type="checkbox" data-skill="iOS (Swift)">
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">iOS (Swift)</span>
+                        </label>
+                    </div>
+                    <div class="checkbox-container">
+                        <label class="checkbox-label">
+                            <input type="checkbox" data-skill="React Native">
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">React Native</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="horisont" style="margin-left: 280px;">
+                    <div class="vertical">
+                        <label for="applicantPort">Портфолио</label>
+                        <input type="url" class="form-input" placeholder="Вставьте ссылку на портфолио" id="applicantPort" style="margin-bottom: 0px;">
+                    </div>
+                    <div class="vertical">
+                        <label for="resume">Резюме</label>
+                        <div class="file-upload-container">
+                            <label class="file-upload-label2" for="resume">
+                                <img src="контент/foldericon.svg" alt="папка" style="margin-right: 5px;"/>
+                                <span>Загрузите файл резюме</span>
+                                <input type="file" id="resume" accept=".pdf,.jpg,.png,.doc,.docx" style="display: none;">
+                            </label>
+                            <div class="uploaded-file-info" id="resumeFileInfo" style="display: none;">
+                                <span id="resumeFileName"></span>
+                                <button class="remove-file-btn" id="removeResumeBtn">×</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="menu" style="margin-left: 60%;">
+                    <button class="btn-custom-del" id="deleteBtn">Удалить профиль</button>
+                    <button class="btn-custom-save" id="saveBtn">Сохранить изменения</button>
+                </div>
+            </div>
+            <div class="tab-content" id="responseContent">
+                <p style="font-size: 18px;">Раздел «Отклики» содержит все возможности (вакансии, стажировки, карьерные мероприятия, менторские программы), на которые Вы откликнулись. Цветовой индикатор показывает актуальное состояние статуса: зелёный — принят, красный — отклонён, синий — на рассмотрении.</p>
+                <img src="контент/atomicon.png" alt="Нет возможностей" class="atom" style=" width: 150px; height: 150px; margin: 65px 515px 10px 515px;"/>
+                <p class="podpis" style="font-size: 20px; color: #6E6E6E; font-weight: 400; width: 409px; text-align: center; margin-left: 386px; margin-bottom: 55px;">У вас пока нет откликов. Начните поиск на карте или в ленте, чтобы откликнуться на первую возможность</p>            
+            </div>
+            <div class="tab-content" id="favContent">
+                <p style="font-size: 18px;">Раздел «Избранное» показывает сохранённые возможности. Здесь они отображаются в виде модульных карточек. Чтобы получить больше информации, нажмите на карточку.</p>
+                <img src="контент/atomicon.png" alt="Нет возможностей" class="atom" style=" width: 150px; height: 150px; margin: 65px 515px 10px 515px;"/>
+                <p class="podpis" style="font-size: 20px; color: #6E6E6E; font-weight: 400; width: 409px; text-align: center; margin-left: 386px; margin-bottom: 55px;">Сохраняйте понравившиеся возможности, чтобы не потерять их.</p>            
+            </div>
+            <div class="tab-content" id="friendsContent">
+                <img src="контент/atomicon.png" alt="Нет возможностей" class="atom" style=" width: 150px; height: 150px; margin: 65px 515px 10px 515px;"/>
+                <p class="podpis" style="font-size: 20px; color: #6E6E6E; font-weight: 400; width: 409px; text-align: center; margin-left: 386px; margin-bottom: 55px;">Раздел находится в разработке. <br> Пожалуйста, вернитесь позже.</p>            
+            </div>
+            <div class="tab-content" id="privacyContent">
+                <img src="контент/atomicon.png" alt="Нет возможностей" class="atom" style=" width: 150px; height: 150px; margin: 65px 515px 10px 515px;"/>
+                <p class="podpis" style="font-size: 20px; color: #6E6E6E; font-weight: 400; width: 409px; text-align: center; margin-left: 386px; margin-bottom: 55px;">Раздел находится в разработке. <br> Пожалуйста, вернитесь позже.</p>            
+            </div>
+        </div>
+    </main>
+    <footer>
+        <img src="контент/footel1.png" alt="свечение" style="position: absolute; top: 0px; left: 0px; z-index: 1; display: block; height:436px; width: 544px;"/>
+        <img src="контент/footel2.png" alt="свечение" style="position: absolute; bottom: 0px; right: 0px; z-index: 1; display: block; height:436px; width: 799px;"/>
+        <img src="контент/logofordark.png" alt="логотип" style="position: absolute; top: 90px; left: 609px; z-index: 2; display: block; width: 319px; height: 99px;"/>
+        <div style="display: flex; justify-content: space-between; width: 1033px; margin-top: 244px; margin-left: 278px; z-index: 2;">
+            <div style="color:#FEFEFC; font-size: 15px;">
+                <p style="margin: 0px 0px 5px 0px;">
+                    <a href="login.html?role=applicant" class="footer-link" style="cursor: pointer;">Создать аккаунт соискателя</a>
+                </p>
+                <p style="margin: 0px 0px 5px 0px;">
+                    <a href="login.html?role=employer" class="footer-link" style="cursor: pointer;">Создать аккаунт работодателя</a>
+                </p>
+                <p style="margin: 0px 0px 5px 0px;">
+                    <a href="login.html?role=curator" class="footer-link" style="cursor: pointer;">Стать куратором</a>
+                </p>
+                <p style="margin: 0px 0px 5px 0px;">
+                    <a href="index.html#map" class="footer-link" style="cursor: pointer;">Карта возможностей</a>
+                </p>
+            </div>
+            <div style="color:#FEFEFC; font-size: 15px;">
+                <p style="margin: 0px 0px 5px 0px;">+7 (3852) 348-310</p>
+                <p style="margin: 0px 0px 5px 0px;">tramplin@work.org</p>
+                <p style="margin: 0px 0px 5px 0px;">Условия использования</p>
+                <p style="margin: 0px 0px 5px 0px;">Политика конфиденциальности</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ========== НАВИГАЦИЯ ПО ВКЛАДКАМ ==========
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButtons = document.querySelectorAll('.btn-custom');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            menuButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    menuButtons.forEach(btn => btn.classList.remove('selected'));
+                    this.classList.add('selected');
+
+                    tabContents.forEach(tab => {
+                        tab.style.display = 'none';
+                    });
+
+                    const targetId = this.getAttribute('data-target');
+                    const activeTab = document.getElementById(targetId);
+                    if (activeTab) {
+                        activeTab.style.display = 'block';
+                    }
+                });
+            });
+
+            const defaultTab = document.getElementById('infoContent');
+            if (defaultTab) {
+                defaultTab.style.display = 'block';
+            }
+        });
+
+        // ========== ЗАГРУЗКА ДАННЫХ ПОЛЬЗОВАТЕЛЯ ==========
+        document.addEventListener('DOMContentLoaded', async function() {
+            const userId = localStorage.getItem('userId');
+            const userName = localStorage.getItem('userName');
+            
+            if (!userId) {
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            // Отображаем имя
+            const nameElement = document.querySelector('.vertical p:last-child');
+            if (nameElement && userName) {
+                nameElement.textContent = userName;
+            }
+            
+            try {
+                const response = await fetch(`api/get-profile.php?user_id=${userId}`);
+                const result = await response.json();
+                
+                if (result.success) {
+                    const data = result.data;
+                    
+                    // Заполняем поля
+                    document.getElementById('applicantLastName').value = data.last_name || '';
+                    document.getElementById('applicantFirstName').value = data.first_name || '';
+                    document.getElementById('applicantPatronymic').value = data.patronymic || '';
+                    document.getElementById('applicantUniversity').value = data.university || '';
+                    document.getElementById('regEmail').value = data.email || '';
+                    document.getElementById('applicantGraduationYear').value = data.graduation_year || '';
+                    document.getElementById('applicantStudyingNow').checked = data.studying_now == 1;
+                    document.getElementById('applicantCity').value = data.city || '';
+                    document.getElementById('applicantBirthDay').value = data.birth_date || '';
+                    document.getElementById('applicantPort').value = data.portfolio || '';
+                    
+                    // Отображаем email
+                    const emailBlock = document.querySelector('.vertical p:first-of-type');
+                    if (emailBlock && data.email) {
+                        emailBlock.textContent = data.email;
+                    }
+                    
+                    // ========== ОТОБРАЖАЕМ ФОТО ==========
+                    if (data.photo_path) {
+                        const photoLabel = document.querySelector('.file-upload-label');
+                        if (photoLabel) {
+                            let img = photoLabel.querySelector('.avatar-img');
+                            if (!img) {
+                                img = document.createElement('img');
+                                img.className = 'avatar-img';
+                                photoLabel.insertBefore(img, photoLabel.firstChild);
+                            }
+                            img.src = `uploads/avatars/${data.photo_path}`;
+                            img.style.width = '150px';
+                            img.style.height = '150px';
+                            img.style.objectFit = 'cover';
+                            img.style.borderRadius = '20px';
+                            img.style.marginBottom = '10px';
+                            
+                            // Скрываем текст и иконку камеры
+                            const span = photoLabel.querySelector('span');
+                            if (span) span.style.display = 'none';
+                            const cameraImg = photoLabel.querySelector('img:not(.avatar-img)');
+                            if (cameraImg) cameraImg.style.display = 'none';
+                        }
+                    }
+                    
+                    // ========== ОТОБРАЖАЕМ РЕЗЮМЕ ==========
+                    if (data.resume_path) {
+                        const resumeInfo = document.getElementById('resumeFileInfo');
+                        const fileNameSpan = document.getElementById('resumeFileName');
+                        if (resumeInfo && fileNameSpan) {
+                            // Показываем красивое имя вместо user_1_1234567890.pdf
+                            const extension = data.resume_path.split('.').pop();
+                            fileNameSpan.textContent = `Резюме.${extension}`;
+                            resumeInfo.style.display = 'flex';
+                        }
+                    }
+                    
+                    // Отмечаем навыки
+                    if (data.skills) {
+                        document.querySelectorAll('.checkbox-container input[type="checkbox"]').forEach(cb => {
+                            if (cb.id !== 'applicantStudyingNow') {
+                                const label = cb.closest('.checkbox-label');
+                                const skillText = label?.querySelector('.checkbox-text')?.innerText;
+                                if (skillText && data.skills.includes(skillText)) {
+                                    cb.checked = true;
+                                }
+                            }
+                        });
+                    }
+                }
+            } catch (error) {
+                console.error('Ошибка загрузки профиля:', error);
+            }
+        });
+
+        // ========== ЗАГРУЗКА ФОТО ==========
+        const photoInput = document.querySelector('#egrulFile');
+        const photoLabel = document.querySelector('.file-upload-label');
+
+        if (photoInput) {
+            photoInput.addEventListener('change', async function(e) {
+                const file = e.target.files[0];
+                if (!file) return;
+                
+                const userId = localStorage.getItem('userId');
+                if (!userId) {
+                    alert('Ошибка: пользователь не авторизован');
+                    return;
+                }
+                
+                // Показываем превью
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    let img = photoLabel.querySelector('.avatar-img');
+                    if (!img) {
+                        img = document.createElement('img');
+                        img.className = 'avatar-img';
+                        photoLabel.insertBefore(img, photoLabel.firstChild);
+                    }
+                    img.src = event.target.result;
+                    img.style.width = '150px';
+                    img.style.height = '150px';
+                    img.style.objectFit = 'cover';
+                    img.style.borderRadius = '20px';
+                    img.style.marginBottom = '10px';
+                    
+                    const span = photoLabel.querySelector('span');
+                    if (span) span.style.display = 'none';
+                    const cameraImg = photoLabel.querySelector('img:not(.avatar-img)');
+                    if (cameraImg) cameraImg.style.display = 'none';
+                };
+                reader.readAsDataURL(file);
+                
+                // Отправляем на сервер
+                const formData = new FormData();
+                formData.append('photo', file);
+                formData.append('user_id', userId);
+                
+                try {
+                    const response = await fetch('api/upload-photo.php', {
+                        method: 'POST',
+                        body: formData
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        console.log('Фото сохранено:', result.url);
+                        alert('✅ Фото успешно загружено!');
+                        setTimeout(() => location.reload(), 500);
+                    } else {
+                        alert('Ошибка загрузки фото: ' + result.message);
+                    }
+                } catch (error) {
+                    console.error('Ошибка:', error);
+                    alert('Ошибка соединения с сервером');
+                }
+            });
+        }
+
+        // ========== ЗАГРУЗКА РЕЗЮМЕ ==========
+        const resumeInput = document.getElementById('resume');
+        const resumeInfo = document.getElementById('resumeFileInfo');
+        const resumefileNameSpan = document.getElementById('resumeFileName');
+        const removeResumeBtn = document.getElementById('removeResumeBtn');
+
+        if (resumeInput) {
+            resumeInput.addEventListener('change', async function(e) {
+                const file = e.target.files[0];
+                if (!file) return;
+                
+                const userId = localStorage.getItem('userId');
+                if (!userId) {
+                    alert('Ошибка: пользователь не авторизован');
+                    return;
+                }
+                
+                // Показываем имя файла
+                resumefileNameSpan.textContent = file.name;
+                resumeInfo.style.display = 'flex';
+                
+                // Отправляем на сервер
+                const formData = new FormData();
+                formData.append('resume', file);
+                formData.append('user_id', userId);
+                
+                try {
+                    const response = await fetch('api/upload-resume.php', {
+                        method: 'POST',
+                        body: formData
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        console.log('Резюме сохранено:', result.url);
+                        alert('✅ Резюме успешно загружено!');
+                    } else {
+                        alert('Ошибка загрузки резюме: ' + result.message);
+                        resumeInfo.style.display = 'none';
+                        fileNameSpan.textContent = '';
+                    }
+                } catch (error) {
+                    console.error('Ошибка:', error);
+                    alert('Ошибка соединения с сервером');
+                    resumeInfo.style.display = 'none';
+                    fileNameSpan.textContent = '';
+                }
+            });
+        }
+
+        // Удаление резюме
+        if (removeResumeBtn) {
+            removeResumeBtn.addEventListener('click', async function() {
+                const userId = localStorage.getItem('userId');
+                if (!userId) {
+                    alert('Ошибка: пользователь не авторизован');
+                    return;
+                }
+                
+                if (confirm('Удалить загруженное резюме?')) {
+                    try {
+                        const response = await fetch('api/delete-resume.php', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({ user_id: userId })
+                        });
+                        
+                        const result = await response.json();
+                        
+                        if (result.success) {
+                            alert('✅ Резюме удалено');
+                            resumeInfo.style.display = 'none';
+                            fileNameSpan.textContent = '';
+                            resumeInput.value = '';
+                        } else {
+                            alert('❌ Ошибка: ' + result.message);
+                        }
+                    } catch (error) {
+                        console.error('Ошибка:', error);
+                        alert('Ошибка соединения с сервером');
+                    }
+                }
+            });
+        }
+
+        // ========== КНОПКА "СОХРАНИТЬ ИЗМЕНЕНИЯ" ==========
+        const saveBtn = document.getElementById('saveBtn');
+        if (saveBtn) {
+            saveBtn.addEventListener('click', async function() {
+                const userId = localStorage.getItem('userId');
+                
+                if (!userId) {
+                    alert('Ошибка: пользователь не авторизован');
+                    return;
+                }
+                
+                // Собираем навыки
+                const skills = [];
+                document.querySelectorAll('.checkbox-container input[type="checkbox"]').forEach(cb => {
+                    if (cb.checked && cb.id !== 'applicantStudyingNow') {
+                        const label = cb.closest('.checkbox-label');
+                        const skillText = label?.querySelector('.checkbox-text')?.innerText;
+                        if (skillText) skills.push(skillText);
+                    }
+                });
+                
+                const updateData = {
+                    user_id: userId,
+                    lastName: document.getElementById('applicantLastName').value,
+                    firstName: document.getElementById('applicantFirstName').value,
+                    patronymic: document.getElementById('applicantPatronymic').value,
+                    university: document.getElementById('applicantUniversity').value,
+                    graduationYear: document.getElementById('applicantGraduationYear').value,
+                    studyingNow: document.getElementById('applicantStudyingNow').checked,
+                    city: document.getElementById('applicantCity').value,
+                    birthDate: document.getElementById('applicantBirthDay').value,
+                    portfolio: document.getElementById('applicantPort').value,
+                    skills: skills
+                };
+                
+                try {
+                    const response = await fetch('api/update-profile.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(updateData)
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        alert('✅ Данные успешно сохранены!');
+                        setTimeout(() => location.reload(), 500);
+                    } else {
+                        alert('❌ Ошибка: ' + result.message);
+                    }
+                } catch (error) {
+                    console.error('Ошибка:', error);
+                    alert('❌ Ошибка соединения с сервером');
+                }
+            });
+        }
+        
+        // ========== КНОПКА "УДАЛИТЬ ПРОФИЛЬ" ==========
+        const deleteBtn = document.getElementById('deleteBtn');
+        if (deleteBtn) {
+            deleteBtn.addEventListener('click', async function() {
+                if (confirm('⚠️ Вы уверены, что хотите удалить свой профиль? Это действие необратимо!')) {
+                    alert('Функция удаления в разработке');
+                }
+            });
+        }
+    </script>
+    </body>
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link href="applicant-dashboard.css" type="text/css" rel="stylesheet"/>
+    <link rel="icon" href="фавикон.ico" type="image/x-icon">
+    <title>Личный кабинет</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <a href="index.html" style="cursor: pointer;"><img src="контент/logofordark.png" class="logo" alt="логотип"></a>
+            <p class="headtext" style="margin-top: 15px;">Вакансии</p>
+            <p class="headtext" style="margin-top: 15px;">Работодателям</p>
+            <form class="search-form" id="searchForm">
+                <input type="text" 
+                    class="search-input" 
+                    placeholder="Поиск вакансий, стажировок, мероприя..."
+                    id="searchInput">
+                <button type="submit" class="search-button">
+                    <img src="searchicon2.svg" alt="поиск" style="width: 68px; height: 48px;">
+                </button>
+            </form>
+            <img src="контент/favouriteicon.svg" alt="избранное" style="margin-right: 20px;">
+            <a href="login.html" style="cursor: pointer;"><img src="контент/accounticon.svg" alt="профиль"></a>
+        </div>
+    </header>
+    <main>
+        <div class="cab">
+            <div class="menu">
+                <button class="btn-custom selected" id="infoBtn" data-target="infoContent">Верификация компаний</button>
+                <button class="btn-custom" id="responseBtn" data-target="responseContent">Модерация карточек</button>
+                <button class="btn-custom" id="favBtn" data-target="favContent">Управление пользователями</button>
+                <button class="btn-custom" id="friendsBtn" data-target="friendsContent">Управление тегами</button>
+                <button class="btn-custom" id="privacyBtn" data-target="privacyContent">Создание кураторов</button>
+            </div>
+            <div class="tab-content" id="infoContent" style="display: contents;">
+                <img src="контент/atomicon.png" alt="Нет возможностей" class="atom" style=" width: 150px; height: 150px; margin: 65px 515px 10px 515px;"/>
+                <p class="podpis" style="font-size: 20px; color: #6E6E6E; font-weight: 400; width: 409px; text-align: center; margin-left: 386px; margin-bottom: 55px;">Раздел находится в разработке. <br> Пожалуйста, вернитесь позже.</p>            
+            </div>
+            <div class="tab-content" id="responseContent">
+                <img src="контент/atomicon.png" alt="Нет возможностей" class="atom" style=" width: 150px; height: 150px; margin: 65px 515px 10px 515px;"/>
+                <p class="podpis" style="font-size: 20px; color: #6E6E6E; font-weight: 400; width: 409px; text-align: center; margin-left: 386px; margin-bottom: 55px;">Раздел находится в разработке. <br> Пожалуйста, вернитесь позже.</p>            
+            </div>
+            <div class="tab-content" id="favContent">
+                <img src="контент/atomicon.png" alt="Нет возможностей" class="atom" style=" width: 150px; height: 150px; margin: 65px 515px 10px 515px;"/>
+                <p class="podpis" style="font-size: 20px; color: #6E6E6E; font-weight: 400; width: 409px; text-align: center; margin-left: 386px; margin-bottom: 55px;">Раздел находится в разработке. <br> Пожалуйста, вернитесь позже.</p>            
+            </div>
+            <div class="tab-content" id="friendsContent">
+                <img src="контент/atomicon.png" alt="Нет возможностей" class="atom" style=" width: 150px; height: 150px; margin: 65px 515px 10px 515px;"/>
+                <p class="podpis" style="font-size: 20px; color: #6E6E6E; font-weight: 400; width: 409px; text-align: center; margin-left: 386px; margin-bottom: 55px;">Раздел находится в разработке. <br> Пожалуйста, вернитесь позже.</p>            
+            </div>
+            <div class="tab-content" id="privacyContent">
+                <img src="контент/atomicon.png" alt="Нет возможностей" class="atom" style=" width: 150px; height: 150px; margin: 65px 515px 10px 515px;"/>
+                <p class="podpis" style="font-size: 20px; color: #6E6E6E; font-weight: 400; width: 409px; text-align: center; margin-left: 386px; margin-bottom: 55px;">Раздел находится в разработке. <br> Пожалуйста, вернитесь позже.</p>            
+            </div>
+        </div>
+    </main>
+    <footer>
+        <img src="контент/footel1.png" alt="свечение" style="position: absolute; top: 0px; left: 0px; z-index: 1; display: block; height:436px; width: 544px;"/>
+        <img src="контент/footel2.png" alt="свечение" style="position: absolute; bottom: 0px; right: 0px; z-index: 1; display: block; height:436px; width: 799px;"/>
+        <img src="контент/logofordark.png" alt="логотип" style="position: absolute; top: 90px; left: 609px; z-index: 2; display: block; width: 319px; height: 99px;"/>
+        <div style="display: flex; justify-content: space-between; width: 1033px; margin-top: 244px; margin-left: 278px; z-index: 2;">
+            <div style="color:#FEFEFC; font-size: 15px;">
+                <p style="margin: 0px 0px 5px 0px;">
+                    <a href="login.html?role=applicant" class="footer-link" style="cursor: pointer;">Создать аккаунт соискателя</a>
+                </p>
+                <p style="margin: 0px 0px 5px 0px;">
+                    <a href="login.html?role=employer" class="footer-link" style="cursor: pointer;">Создать аккаунт работодателя</a>
+                </p>
+                <p style="margin: 0px 0px 5px 0px;">
+                    <a href="login.html?role=curator" class="footer-link" style="cursor: pointer;">Стать куратором</a>
+                </p>
+                <p style="margin: 0px 0px 5px 0px;">
+                    <a href="index.html#map" class="footer-link" style="cursor: pointer;">Карта возможностей</a>
+                </p>
+            </div>
+            <div style="color:#FEFEFC; font-size: 15px;">
+                <p style="margin: 0px 0px 5px 0px;">+7 (3852) 348-310</p>
+                <p style="margin: 0px 0px 5px 0px;">tramplin@work.org</p>
+                <p style="margin: 0px 0px 5px 0px;">Условия использования</p>
+                <p style="margin: 0px 0px 5px 0px;">Политика конфиденциальности</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // ========== НАВИГАЦИЯ ПО ВКЛАДКАМ ==========
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButtons = document.querySelectorAll('.btn-custom');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            menuButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    menuButtons.forEach(btn => btn.classList.remove('selected'));
+                    this.classList.add('selected');
+
+                    tabContents.forEach(tab => {
+                        tab.style.display = 'none';
+                    });
+
+                    const targetId = this.getAttribute('data-target');
+                    const activeTab = document.getElementById(targetId);
+                    if (activeTab) {
+                        activeTab.style.display = 'block';
+                    }
+                    
+                    // Загружаем данные для активной вкладки
+                    if (targetId === 'verifyContent') loadPendingCompanies();
+                    if (targetId === 'moderateContent') loadPendingOpportunities();
+                    if (targetId === 'usersContent') loadAllUsers();
+                    if (targetId === 'tagsContent') loadSkills();
+                });
+            });
+
+            const defaultTab = document.getElementById('verifyContent');
+            if (defaultTab) defaultTab.style.display = 'block';
+        });
+
+        // ========== ПРОВЕРКА АВТОРИЗАЦИИ ==========
+        document.addEventListener('DOMContentLoaded', async function() {
+            const userId = localStorage.getItem('userId');
+            const userRole = localStorage.getItem('userRole');
+            const curatorName = localStorage.getItem('userName');
+            const institution = localStorage.getItem('institution');
+            
+            if (!userId || userRole !== 'curator') {
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            document.getElementById('curatorName').textContent = curatorName || 'Куратор';
+            document.getElementById('institutionName').textContent = institution || 'Не указано';
+        });
+
+        // ========== ФУНКЦИЯ ЗАПРОСА ==========
+        async function apiCall(url, method = 'GET', data = null) {
+            const options = { method, headers: {} };
+            if (data) {
+                options.headers['Content-Type'] = 'application/json';
+                options.body = JSON.stringify(data);
+            }
+            const response = await fetch(url, options);
+            return await response.json();
+        }
+
+        // ========== 1. ВЕРИФИКАЦИЯ КОМПАНИЙ ==========
+        async function loadPendingCompanies() {
+            const container = document.getElementById('pendingCompanies');
+            container.innerHTML = '<p>Загрузка...</p>';
+            
+            try {
+                const result = await apiCall('api/get-pending-companies.php');
+                if (result.success && result.data.length > 0) {
+                    container.innerHTML = result.data.map(company => `
+                        <div style="background: white; border: 1px solid #E0E0E0; border-radius: 20px; padding: 20px; margin-bottom: 15px;">
+                            <h4>${escapeHtml(company.company_name)}</h4>
+                            <p>Email: ${escapeHtml(company.email)}</p>
+                            <p>ИНН: ${escapeHtml(company.inn || 'Не указан')}</p>
+                            <p>Сайт: ${escapeHtml(company.website || 'Не указан')}</p>
+                            <div style="margin-top: 15px;">
+                                <button class="btn-custom1" style="width: 100px; margin-right: 10px;" onclick="verifyCompany(${company.user_id}, 'approve')">Одобрить</button>
+                                <button class="btn-custom2" style="width: 100px;" onclick="verifyCompany(${company.user_id}, 'reject')">Отклонить</button>
+                            </div>
+                        </div>
+                    `).join('');
+                } else {
+                    container.innerHTML = '<p style="color: #6E6E6E; text-align: center;">Нет компаний на верификации</p>';
+                }
+            } catch (error) {
+                container.innerHTML = '<p style="color: red;">Ошибка загрузки</p>';
+            }
+        }
+
+        window.verifyCompany = async function(userId, status) {
+            const result = await apiCall('api/verify-company.php', 'POST', { user_id: userId, status: status });
+            alert(result.message);
+            loadPendingCompanies();
+        };
+
+        // ========== 2. МОДЕРАЦИЯ КАРТОЧЕК ==========
+        async function loadPendingOpportunities() {
+            const container = document.getElementById('pendingOpportunities');
+            container.innerHTML = '<p>Загрузка...</p>';
+            
+            try {
+                const result = await apiCall('api/get-pending-opportunities.php');
+                if (result.success && result.data.length > 0) {
+                    container.innerHTML = result.data.map(opp => `
+                        <div style="background: white; border: 1px solid #E0E0E0; border-radius: 20px; padding: 20px; margin-bottom: 15px;">
+                            <h4>${escapeHtml(opp.title)}</h4>
+                            <p>Компания: ${escapeHtml(opp.company_name)}</p>
+                            <p>Тип: ${getTypeLabel(opp.type)}</p>
+                            <p>${escapeHtml(opp.description)}</p>
+                            <div style="margin-top: 15px;">
+                                <button class="btn-custom1" style="width: 100px; margin-right: 10px;" onclick="moderateOpportunity(${opp.id}, 'approve')">Одобрить</button>
+                                <button class="btn-custom2" style="width: 100px;" onclick="moderateOpportunity(${opp.id}, 'reject')">Отклонить</button>
+                            </div>
+                        </div>
+                    `).join('');
+                } else {
+                    container.innerHTML = '<p style="color: #6E6E6E; text-align: center;">Нет карточек на модерации</p>';
+                }
+            } catch (error) {
+                container.innerHTML = '<p style="color: red;">Ошибка загрузки</p>';
+            }
+        }
+
+        window.moderateOpportunity = async function(oppId, status) {
+            const result = await apiCall('api/moderate-opportunity.php', 'POST', { opportunity_id: oppId, status: status });
+            alert(result.message);
+            loadPendingOpportunities();
+        };
+
+        function getTypeLabel(type) {
+            const types = {
+                vacancy: 'Вакансия',
+                internship: 'Стажировка',
+                event: 'Мероприятие',
+                mentorship: 'Менторская программа'
+            };
+            return types[type] || type;
+        }
+
+        // ========== 3. УПРАВЛЕНИЕ ПОЛЬЗОВАТЕЛЯМИ ==========
+        async function loadAllUsers() {
+            const container = document.getElementById('allUsers');
+            container.innerHTML = '<p>Загрузка...</p>';
+            
+            try {
+                const result = await apiCall('api/get-all-users.php');
+                if (result.success) {
+                    container.innerHTML = result.data.map(user => `
+                        <div style="background: white; border: 1px solid #E0E0E0; border-radius: 20px; padding: 20px; margin-bottom: 15px;">
+                            <h4>${escapeHtml(user.name)}</h4>
+                            <p>Email: ${escapeHtml(user.email)}</p>
+                            <p>Роль: ${getRoleLabel(user.role)}</p>
+                            <p>Зарегистрирован: ${new Date(user.created_at).toLocaleDateString('ru-RU')}</p>
+                            <button class="btn-custom2" style="width: 150px; margin-top: 10px;" onclick="deleteUser(${user.id})">Удалить пользователя</button>
+                        </div>
+                    `).join('');
+                }
+            } catch (error) {
+                container.innerHTML = '<p style="color: red;">Ошибка загрузки</p>';
+            }
+        }
+
+        function getRoleLabel(role) {
+            const roles = {
+                applicant: 'Соискатель',
+                employer: 'Работодатель',
+                curator: 'Куратор'
+            };
+            return roles[role] || role;
+        }
+
+        window.deleteUser = async function(userId) {
+            if (confirm('Вы уверены, что хотите удалить этого пользователя? Это действие необратимо!')) {
+                const result = await apiCall('api/delete-user.php', 'POST', { user_id: userId });
+                alert(result.message);
+                loadAllUsers();
+            }
+        };
+
+        // ========== 4. УПРАВЛЕНИЕ ТЕГАМИ ==========
+        async function loadSkills() {
+            const container = document.getElementById('skillsList');
+            container.innerHTML = '<p>Загрузка...</p>';
+            
+            try {
+                const result = await apiCall('api/get-skills.php');
+                if (result.success) {
+                    container.innerHTML = result.data.map(skill => `
+                        <div style="background: #f0f0f0; padding: 8px 16px; border-radius: 20px; display: inline-flex; align-items: center; gap: 10px;">
+                            <span>${escapeHtml(skill.name)}</span>
+                            <button class="remove-skill" data-id="${skill.id}" style="background: none; border: none; color: #ff4444; cursor: pointer; font-size: 18px;">×</button>
+                        </div>
+                    `).join('');
+                    
+                    document.querySelectorAll('.remove-skill').forEach(btn => {
+                        btn.addEventListener('click', () => deleteSkill(btn.dataset.id));
+                    });
+                }
+            } catch (error) {
+                container.innerHTML = '<p style="color: red;">Ошибка загрузки</p>';
+            }
+        }
+
+        document.getElementById('addSkillBtn')?.addEventListener('click', async function() {
+            const skillName = document.getElementById('newSkillName').value.trim();
+            if (!skillName) {
+                alert('Введите название навыка');
+                return;
+            }
+            
+            const result = await apiCall('api/add-skill.php', 'POST', { name: skillName });
+            alert(result.message);
+            document.getElementById('newSkillName').value = '';
+            loadSkills();
+        });
+
+        async function deleteSkill(skillId) {
+            if (confirm('Удалить этот навык?')) {
+                const result = await apiCall('api/delete-skill.php', 'POST', { skill_id: skillId });
+                alert(result.message);
+                loadSkills();
+            }
+        }
+
+        // ========== 5. СОЗДАНИЕ КУРАТОРОВ ==========
+        document.getElementById('createCuratorForm')?.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('newCuratorEmail').value;
+            const name = document.getElementById('newCuratorName').value;
+            const password = document.getElementById('newCuratorPassword').value;
+            const institution = document.getElementById('newCuratorInstitution').value;
+            
+            const result = await apiCall('api/create-curator.php', 'POST', {
+                email, name, password, institution
+            });
+            
+            alert(result.message);
+            if (result.success) {
+                this.reset();
+            }
+        });
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return str.replace(/[&<>]/g, function(m) {
+                if (m === '&') return '&amp;';
+                if (m === '<') return '&lt;';
+                if (m === '>') return '&gt;';
+                return m;
+            });
+        }
+        
+        // Загружаем данные для активной вкладки
+        loadPendingCompanies();
+    </script>
+</body>
+</html>

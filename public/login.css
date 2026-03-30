@@ -1,0 +1,543 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body{
+    line-height: 1.2;
+    background-color: #FEFEFC;
+    color: #171717;
+    padding: 0px;
+    scrollbar-color: #C6FF34 #9A84FF;
+    font-family: "Inter";
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+main{
+    margin: 0px;
+}
+
+.frame{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1;
+    color: #FEFEFC;
+    padding: 18px 0 18px 25px;
+    background-color: #171717;
+    border-style: none;
+    border-radius: 33px;
+    width: 638px;
+    height: 690px;
+    position: relative;
+    display: inline-block;
+    padding: 0px 0px 35px 40px;
+}
+
+.light{
+    width: 638px;
+    height: 348px;
+    position: absolute;
+    border-radius: 33px;
+    z-index: -1;
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 90px;
+}
+
+.btn-custom1{
+    background-color: #9A84FF;
+    border-radius: 66px;
+    border: none;
+    color: #FEFEFC;
+    transition: background-color 0.3s ease;
+    cursor: pointer; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    width: 306px;
+    font-size: 18px;
+}
+
+.btn-custom1:hover{
+    background-color: #7455FF !important;
+}
+.btn-custom2{
+    border-style: solid;
+    border-width: 2px;
+    background-color: #FEFEFC;
+    border-radius: 66px;
+    border-color: #E4E4E4;
+    color: #171717;
+    transition: background-color 0.3s ease;
+    cursor: pointer; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    width: 306px;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.btn-custom2:hover{
+    background-color: #E6E0FF !important;
+    border-color: #9A84FF;
+}
+
+a{
+    all: unset;
+}
+
+.zag{
+    margin-top: 316px;
+    margin-bottom: 243px;
+    font-size: 30px;
+    width: 459px;
+}
+
+.mainn{
+    font-size: 15px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+
+/* Стили для шагов */
+.step-container {
+    width: 100%;
+    max-width: 350px;
+    transition: all 0.3s ease;
+}
+
+/* Кнопки выбора роли */
+.role-buttons {
+    display: flex; 
+    margin-bottom: 20px;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.role-btn {
+    border-style: solid;
+    border-width: 2px;
+    background-color: #FEFEFC;
+    border-radius: 66px;
+    border-color: #E4E4E4;
+    color: #171717;
+    transition: background-color 0.3s ease;
+    cursor: pointer; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    width: 306px;
+    font-size: 18px;
+}
+
+.role-btn:hover {
+    border-color: #9A84FF;
+}
+
+.role-btn.selected {
+    border-color: #9A84FF;
+}
+
+/* Кнопка "Регистрация/Вход" */
+#nextStepBtn {
+    width: 100%;
+    margin-top: 0px;
+}
+
+/* Переключатель Вход/Регистрация */
+.auth-toggle {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #E4E4E4;
+    background-color: #FEFEFC;
+    border-radius: 66px;
+    color: #171717;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn:hover {
+    background-color: #E6E0FF;
+    border-color: #9A84FF;
+}
+
+.toggle-btn.active {
+    background-color: #9A84FF;
+    border-color: #9A84FF;
+    color: #FEFEFC;
+}
+
+/* Формы */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.form-input {
+    width: 380px;
+    padding: 15px 20px;
+    border: 2px solid #E4E4E4;
+    border-radius: 66px;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.form-input:focus {
+    border-color: #9A84FF;
+    box-shadow: 0 0 0 3px rgba(154, 132, 255, 0.1);
+}
+
+.submit-btn {
+    width: 380px !important;
+    margin-top: 10px;
+}
+
+/* Сообщение для куратора */
+.message-text {
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #171717;
+}
+
+/* Кнопка назад */
+.back-btn {
+    background: none;
+    border: none;
+    color: #9A84FF;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    transition: all 0.3s ease;
+    font-family: "Inter", sans-serif;
+}
+
+.back-btn:hover {
+    color: #7455FF;
+    text-decoration: underline;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.step-container {
+    animation: fadeIn 0.2s ease;
+}
+
+
+/* Стильный переключатель */
+.switch-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    width: 380px;
+}
+
+.switch {
+    position: relative;
+    display: inline-flex;
+    background-color: #9A84FF; /* Фиолетовый фон */
+    border-radius: 66px;
+    padding: 4px;
+    cursor: pointer;
+    width: 380px;
+    height: 50px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.switch input {
+    display: none;
+}
+
+.switch-option {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    padding: 10px 0;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    color: rgba(255, 255, 255, 0.7); /* Полупрозрачный белый для неактивного */
+    text-align: center;
+}
+
+.switch-slider {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    height: calc(100% - 8px);
+    width: calc(50% - 4px);
+    background-color: #FEFEFC; /* Белый фон для активного */
+    border-radius: 66px;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Активный текст становится темным */
+#register-mode:checked ~ .switch-option[for="register-mode"],
+#login-mode:checked ~ .switch-option[for="login-mode"] {
+    color: #171717; /* Темный цвет для активного текста */
+    font-weight: 600;
+}
+
+/* Неактивный текст остается светлым */
+#register-mode:checked ~ .switch-option[for="login-mode"],
+#login-mode:checked ~ .switch-option[for="register-mode"] {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Позиционирование бегунка */
+#register-mode:checked ~ .switch-slider {
+    transform: translateX(0);
+}
+
+#login-mode:checked ~ .switch-slider {
+    transform: translateX(100%);
+}
+
+
+
+
+
+
+
+/* Стили для заголовка формы */
+.form-title {
+    font-size: 24px;
+    font-weight: 600;
+    font-family: "Unbounded", sans-serif;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #171717;
+}
+
+/* Чекбокс */
+.checkbox-container {
+    margin: 10px 0;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    color: #171717;
+    user-select: none;
+}
+
+.checkbox-label input {
+    display: none;
+}
+
+.checkbox-custom {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #E4E4E4;
+    border-radius: 6px;
+    margin-right: 12px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.checkbox-label input:checked + .checkbox-custom {
+    background-color: #9A84FF;
+    border-color: #9A84FF;
+}
+
+.checkbox-label input:checked + .checkbox-custom::after {
+    content: "✓";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+}
+
+.checkbox-text {
+    font-size: 16px;
+    color: #171717;
+}
+
+/* Переключатель для верификации */
+.verification-switch-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    width: 380px;
+}
+
+.verification-switch {
+    position: relative;
+    display: inline-flex;
+    background-color: #9A84FF;
+    border-radius: 66px;
+    padding: 4px;
+    cursor: pointer;
+    width: 380px;
+    height: 50px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.verification-switch input {
+    display: none;
+}
+
+.verification-switch-option {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    padding: 10px 0;
+    font-size: 14px;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+}
+
+.verification-switch-slider {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    height: calc(100% - 8px);
+    width: calc(50% - 4px);
+    background-color: #FEFEFC;
+    border-radius: 66px;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+#inn-mode:checked ~ .verification-switch-option[for="inn-mode"],
+#egrul-mode:checked ~ .verification-switch-option[for="egrul-mode"] {
+    color: #171717;
+    font-weight: 600;
+}
+
+#inn-mode:checked ~ .verification-switch-option[for="egrul-mode"],
+#egrul-mode:checked ~ .verification-switch-option[for="inn-mode"] {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#inn-mode:checked ~ .verification-switch-slider {
+    transform: translateX(0);
+}
+
+#egrul-mode:checked ~ .verification-switch-slider {
+    transform: translateX(100%);
+}
+
+/* Загрузка файла */
+.file-upload-container {
+    margin-bottom: 20px;
+}
+
+.file-upload-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 380px;
+    padding: 15px 20px;
+    background-color: #FEFEFC;
+    border: 2px dashed #E4E4E4;
+    border-radius: 66px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #9A84FF;
+    font-weight: 500;
+}
+
+.file-upload-label:hover {
+    border-color: #9A84FF;
+    background-color: #F9F7FF;
+}
+
+.uploaded-file-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background-color: #F5F5F5;
+    border-radius: 66px;
+    margin-top: 10px;
+    width: 380px;
+}
+
+.remove-file-btn {
+    background: none;
+    border: none;
+    color: #ff4444;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 0 5px;
+}
+
+.remove-file-btn:hover {
+    color: #cc0000;
+}

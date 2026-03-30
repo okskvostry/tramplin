@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link href="applicant-dashboard.css" type="text/css" rel="stylesheet"/>
+    <link rel="icon" href="фавикон.ico" type="image/x-icon">
+    <title>Личный кабинет</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <a href="index.html" style="cursor: pointer;"><img src="контент/logofordark.png" class="logo" alt="логотип"></a>
+            <p class="headtext" style="margin-top: 15px;">Вакансии</p>
+            <p class="headtext" style="margin-top: 15px;">Работодателям</p>
+            <form class="search-form" id="searchForm">
+                <input type="text" 
+                    class="search-input" 
+                    placeholder="Поиск вакансий, стажировок, мероприя..."
+                    id="searchInput">
+                <button type="submit" class="search-button">
+                    <img src="searchicon2.svg" alt="поиск" style="width: 68px; height: 48px;">
+                </button>
+            </form>
+            <img src="контент/favouriteicon.svg" alt="избранное" style="margin-right: 20px;">
+            <a href="login.html" style="cursor: pointer;"><img src="контент/accounticon.svg" alt="профиль"></a>
+        </div>
+    </header>
+    <main>
+        <div class="cab">
+            <div class="menu">
+                <button class="btn-custom selected" id="infoBtn" data-target="infoContent">О компании</button>
+                <button class="btn-custom" id="responseBtn" data-target="responseContent">Возможности</button>
+                <button class="btn-custom" id="favBtn" data-target="favContent">Создать возможности</button>
+                <button class="btn-custom" id="friendsBtn" data-target="friendsContent">Отклики</button>
+                <button class="btn-custom" id="privacyBtn" data-target="privacyContent">Друзья</button>
+            </div>
+            <div class="tab-content" id="infoContent" style="display: contents;">
+                <div class="horisont">
+                    <div class="vertical" style="width: 250px; margin: 0 55px 0 15px;">
+                        <p style="font-family: Unbounded; font-size: 20px; font-weight: 400; width: 172px; text-align: center; color:#9A84FF; margin: 0;">Компания</p>
+                        <div class="file-upload-container">
+                            <label class="file-upload-label" for="logoFile">
+                                <img src="контент/cameraicon.svg" alt="камера"/>
+                                <span style="text-align: center; width: 138px; margin-top: 5px;">Загрузите логотип в разрешении 1080×1080</span>
+                                <input type="file" id="logoFile" accept=".pdf,.jpg,.png,.doc,.docx" style="display: none;">
+                            </label>
+                            <div class="uploaded-file-info" id="uploadedFileInfo" style="display: none;">
+                                <span id="fileName"></span>
+                                <button class="remove-file-btn" id="removeFileBtn">×</button>
+                            </div>
+                            <p style="font-size: 13px; color:#6E6E6E; margin: 0px; text-align: center; width: 172px;">почта</p>
+                            <p style="font-size: 15px; color:#171717; margin-top: 6px; text-align: center; width: 172px; font-weight: 500;">Название компании</p>
+                        </div>
+                    </div>
+                    <div class="vertical">
+                        <label for="applicantLastName">Название</label>
+                        <input type="text" class="form-input" placeholder="Введите название компании" id="applicantLastName">
+                        <div class="vertical">
+                            <label for="companyDescription">Краткое описание</label>
+                            <textarea class="form-input2" id="companyDescription" placeholder="Расскажите, чем занимается компания, ваша миссия и реализуемые проекты" rows="4"></textarea>
+                        </div>                        
+                        <label for="applicantUniversity">Город</label>
+                        <input type="text" class="form-input" placeholder="Введите город" id="applicantUniversity">
+                        <label style="margin-bottom: 15px;">Сфера деятельности</label>
+                    </div>
+                    <div class="vertical">
+                        <label for="regEmail">Email</label>
+                        <input type="text" class="form-input" placeholder="Введите электронную почту" id="regEmail">
+                        <label for="applicantBirthDay">Телефон</label>
+                        <input type="text" class="form-input" placeholder="Введите номер телефона" id="applicantBirthDay">
+                        <label for="applicantCity">Ссылка на сайт</label>
+                        <input type="text" class="form-input" placeholder="Введите ссылку на сайт" id="applicantCity">
+                        <label for="applicantGraduationYear">Адрес (для офлайн вакансий)</label>
+                        <input type="text" class="form-input" placeholder="Введите адрес" id="applicantGraduationYear">
+                    </div>
+                </div>
+                <div class="horisont" style="margin-left: 280px; line-height: 1.2;">
+                    <div class="checkbox-container" style="width: 300;">
+                        <label class="checkbox-label">
+                            <input type="checkbox" data-skill="C#">
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">Языки программирования</span>
+                        </label>
+                    </div>
+                    <div class="checkbox-container" style="width: 259px;">
+                        <label class="checkbox-label">
+                            <input type="checkbox" data-skill="JavaScript">
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">Разработка баз данных</span>
+                        </label>
+                    </div>
+                    <div class="checkbox-container" style="width: 300px;">
+                        <label class="checkbox-label">
+                            <input type="checkbox" data-skill="PHP">
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">Data Science и аналитика</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="vertical" style="margin-left: 280px; margin-top: 13px; line-height: 1.2;">
+                    <div class="checkbox-container">
+                        <label class="checkbox-label">
+                            <input type="checkbox" data-skill="Python">
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">Мобильная разработка</span>
+                        </label>
+                    </div>
+                    <label style="margin-top: 20px;">Фото офиса/команды/рабочей атмосферы</label>
+                </div>
+               <div class="horisont" style="margin-left: 280px;">
+                <!-- Фото 1 -->
+                <div class="file-upload-container">
+                    <label class="file-upload-label3" for="officePhoto1">
+                        <img src="контент/cameraicon.svg" alt="камера"/>
+                        <input type="file" id="officePhoto1" accept="image/*" style="display: none;">
+                        <img id="officePhotoPreview1" style="width: 100px; height: 100px; object-fit: cover; border-radius: 10px; margin-bottom: 5px;">
+                    </label>
+                    <div class="uploaded-file-info" id="officePhotoInfo1" style="display: none; width: 135px;">
+                        <span id="officeFileName1"></span>
+                        <button class="remove-office-photo" data-photo="1">×</button>
+                    </div>
+                </div>
+                <!-- Фото 2 -->
+                <div class="file-upload-container">
+                    <label class="file-upload-label3" for="officePhoto2">
+                        <img src="контент/cameraicon.svg" alt="камера"/>
+                        <input type="file" id="officePhoto2" accept="image/*" style="display: none;">
+                        <img id="officePhotoPreview2" style="width: 100px; height: 100px; object-fit: cover; border-radius: 10px; margin-bottom: 5px;">
+                    </label>
+                    <div class="uploaded-file-info" id="officePhotoInfo2" style="display: none; width: 135px;">
+                        <span id="officeFileName2"></span>
+                        <button class="remove-office-photo" data-photo="2">×</button>
+                    </div>
+                </div>
+                <!-- Фото 3 -->
+                <div class="file-upload-container">
+                    <label class="file-upload-label3" for="officePhoto3">
+                        <img src="контент/cameraicon.svg" alt="камера"/>
+                        <input type="file" id="officePhoto3" accept="image/*" style="display: none; width: 135px;">
+                        <img id="officePhotoPreview3" style="width: 100px; height: 100px; object-fit: cover; border-radius: 10px; margin-bottom: 5px;">
+                    </label>
+                    <div class="uploaded-file-info" id="officePhotoInfo3" style="display: none;">
+                        <span id="officeFileName3"></span>
+                        <button class="remove-office-photo" data-photo="3">×</button>
+                    </div>
+                </div>
+                <!-- Фото 4 -->
+                <div class="file-upload-container">
+                    <label class="file-upload-label3" for="officePhoto4">
+                        <img src="контент/cameraicon.svg" alt="камера"/>
+                        <input type="file" id="officePhoto4" accept="image/*" style="display: none; width: 135px;">
+                        <img id="officePhotoPreview4" style="width: 100px; height: 100px; object-fit: cover; border-radius: 10px; margin-bottom: 5px;">
+                    </label>
+                    <div class="uploaded-file-info" id="officePhotoInfo4" style="display: none;">
+                        <span id="officeFileName4"></span>
+                        <button class="remove-office-photo" data-photo="4">×</button>
+                    </div>
+                </div>
+                <!-- Фото 5 -->
+                <div class="file-upload-container">
+                    <label class="file-upload-label3" for="officePhoto5">
+                        <img src="контент/cameraicon.svg" alt="камера"/>
+                        <input type="file" id="officePhoto5" accept="image/*" style="display: none; width: 135px;">
+                        <img id="officePhotoPreview5" style="width: 100px; height: 100px; object-fit: cover; border-radius: 10px; margin-bottom: 5px;">
+                    </label>
+                    <div class="uploaded-file-info" id="officePhotoInfo5" style="display: none;">
+                        <span id="officeFileName5"></span>
+                        <button class="remove-office-photo" data-photo="5">×</button>
+                    </div>
+                </div>
+            </div>
+            <div class="menu" style="margin-left: 60%;">
+                <button class="btn-custom-del" id="deleteBtn">Удалить профиль</button>
+                <button class="btn-custom-save" id="saveBtn">Сохранить изменения</button>
+            </div>
+            </div>
+            <!--<div class="tab-content" id="responseContent">
+                <p style="font-size: 18px;">В разделе «Возможности» собраны все ваши предложения: активные вакансии, стажировки, менторские программы <br> и мероприятия.</p>
+                <img src="контент/atomicon.png" alt="Нет возможностей" class="atom" style=" width: 150px; height: 150px; margin: 65px 515px 10px 515px;"/>
+                <p class="podpis" style="font-size: 20px; color: #6E6E6E; font-weight: 400; width: 409px; text-align: center; margin-left: 386px; margin-bottom: 199px;">Вы ещё не создали ни одной карточки возможностей. Сделайте это в следующем разделе, чтобы найти подходящих кандидатов</p>
+            </div>-->
+            <div class="tab-content" id="responseContent">
+                <h2 style="font-size: 24px; margin-bottom: 20px;">Мои возможности</h2>
+                <div id="opportunitiesList" style="display: flex; flex-direction: column; gap: 20px;">
+                    <!-- Карточки будут загружаться сюда -->
+                    <p style="color: #6E6E6E; text-align: center;">Загрузка...</p>
+                </div>
+            </div>
+            <!--<div class="tab-content" id="favContent">
+                <p style="font-size: 18px;">Здесь вы можете разместить стажировку, вакансию, менторскую программу или мероприятие. Заполните обязательные поля, <br> чтобы создать новую карточку возможности. После прохождения модерации предложение появится на карте и в ленте.</p>
+            
+            </div>-->
+            <div class="tab-content" id="favContent">
+                <h2 style="font-size: 24px; margin-bottom: 20px;">Создать возможность</h2>
+                <p style="margin-bottom: 30px; color: #6E6E6E;">Заполните обязательные поля, чтобы создать новую карточку возможности. После прохождения модерации предложение появится на карте и в ленте.</p>
+                
+                <form id="opportunityForm">
+                    <div class="horisont">
+                        <div class="vertical">
+                            <div class="form-group" style="margin-bottom: 20px;">
+                                <label style="font-weight: 500;">Название компании</label>
+                                <input type="text" id="companyNameDisplay" class="form-input" readonly style="background-color: #f5f5f5;" value="Загрузка...">
+                            </div>
+                            <div class="form-group" style="margin-bottom: 20px;">
+                                <label for="opportunityTitle" style="font-weight: 500;">Название возможности *</label>
+                                <input type="text" id="opportunityTitle" class="form-input" placeholder="Введите название возможности" required>
+                            </div>
+                            <div class="form-group" style="margin-bottom: 20px;">
+                                <label for="opportunityDescription" style="font-weight: 500;">Краткое описание *</label>
+                                <textarea id="opportunityDescription" class="form-input2" rows="4" placeholder="Опишите суть предложения: чем предстоит заниматься, требования к кандидату, условия участия" required></textarea>
+                            </div>
+                            <div class="form-group" style="flex: 1;">
+                                <label for="startDate" style="font-weight: 500;">Дата начала/публикации *</label>
+                                <input type="date" id="startDate" class="form-input" required>
+                            </div>
+                            <div class="form-group" style="flex: 1;">
+                                <label for="eventTime" style="font-weight: 500;">Время (для мероприятий)</label>
+                                <input type="time" id="eventTime" class="form-input">
+                            </div>
+                        </div>
+                        <div class="vertical">
+                            <div class="form-group" style="flex: 1;">
+                                <label for="opportunityType" style="font-weight: 500;">Тип возможности *</label>
+                                <select id="opportunityType" class="form-input" required>
+                                    <option value="vacancy">Вакансия</option>
+                                    <option value="internship">Стажировка</option>
+                                    <option value="event">Карьерное мероприятие</option>
+                                    <option value="mentorship">Менторская программа</option>
+                                </select>
+                            </div>
+                            <div class="form-group" style="flex: 1;">
+                                <label for="opportunityFormat" style="font-weight: 500;">Формат *</label>
+                                <select id="opportunityFormat" class="form-input" required>
+                                    <option value="online">Онлайн</option>
+                                    <option value="offline">Офлайн</option>
+                                </select>
+                            </div>
+                            <div class="form-group" style="flex: 1;" id="cityGroup">
+                                <label for="city" style="font-weight: 500;">Город</label>
+                                <input type="text" id="city" class="form-input" placeholder="Введите город">
+                            </div>
+                            <div class="form-group" style="flex: 1;" id="priceGroup">
+                                <label for="price" style="font-weight: 500;">Стоимость участия (для мероприятий)</label>
+                                <input type="text" id="price" class="form-input" placeholder="Например: Бесплатно, 500 руб.">
+                            </div>
+                            
+                            <div class="form-group" style="flex: 1;" id="salaryGroup">
+                                <label for="salaryMin" style="font-weight: 500;">Минимальная зарплата (для вакансий)</label>
+                                <input type="number" id="salaryMin" class="form-input" placeholder="От 50000 руб.">
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label style="font-weight: 500; margin-bottom: 15px; display: block;">Требуемые навыки</label>
+                        <div class="skills-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+                            <div class="checkbox-container">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" class="skill-checkbox" value="C#">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">C#</span>
+                                </label>
+                            </div>
+                            <div class="checkbox-container">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" class="skill-checkbox" value="JavaScript">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">JavaScript</span>
+                                </label>
+                            </div>
+                            <div class="checkbox-container">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" class="skill-checkbox" value="PHP">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">PHP</span>
+                                </label>
+                            </div>
+                            <div class="checkbox-container">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" class="skill-checkbox" value="Python">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">Python</span>
+                                </label>
+                            </div>
+                            <div class="checkbox-container">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" class="skill-checkbox" value="MySQL">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">MySQL</span>
+                                </label>
+                            </div>
+                            <div class="checkbox-container">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" class="skill-checkbox" value="PostgreSQL">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">PostgreSQL</span>
+                                </label>
+                            </div>
+                            <div class="checkbox-container">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" class="skill-checkbox" value="SQL">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">SQL</span>
+                                </label>
+                            </div>
+                            <div class="checkbox-container">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" class="skill-checkbox" value="Excel">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">Excel</span>
+                                </label>
+                            </div>
+                            <div class="checkbox-container">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" class="skill-checkbox" value="NumPy">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">NumPy</span>
+                                </label>
+                            </div>
+                            <div class="checkbox-container">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" class="skill-checkbox" value="Pandas">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">Pandas</span>
+                                </label>
+                            </div>
+                            <div class="checkbox-container">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" class="skill-checkbox" value="Android (Kotlin)">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">Android (Kotlin)</span>
+                                </label>
+                            </div>
+                            <div class="checkbox-container">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" class="skill-checkbox" value="Flutter">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">Flutter</span>
+                                </label>
+                            </div>
+                            <div class="checkbox-container">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" class="skill-checkbox" value="iOS (Swift)">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">iOS (Swift)</span>
+                                </label>
+                            </div>
+                            <div class="checkbox-container">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" class="skill-checkbox" value="React Native">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">React Native</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="horisont" style="gap: 20px; margin-top: 40px; margin-left: 705px;">
+                        <button type="button" id="clearFormBtn" class="btn-custom2" style="width: 200px;">Очистить всё</button>
+                        <button type="submit" id="createOpportunityBtn" class="btn-custom1" style="width: 200px;">Создать карточку</button>
+                    </div>
+                </form>
+            </div>
+            <div class="tab-content" id="friendsContent">
+                <p style="font-size: 18px;" >Раздел «Отклики» содержит все Ваши возможности (вакансии, стажировки, карьерные мероприятия, менторские программы), на которые откликнулись кандидаты. Вы можете изменять статус откликнувшихся.</p>
+            </div>
+            <div class="tab-content" id="privacyContent">
+                <img src="контент/atomicon.png" alt="Нет возможностей" class="atom" style=" width: 150px; height: 150px; margin: 65px 515px 10px 515px;"/>
+                <p class="podpis" style="font-size: 20px; color: #6E6E6E; font-weight: 400; width: 409px; text-align: center; margin-left: 386px; margin-bottom: 78px;">Раздел находится в разработке. <br> Пожалуйста, вернитесь позже.</p>
+            </div>
+            
+        </div>
+    </main>
+    <footer>
+        <img src="контент/footel1.png" alt="свечение" style="position: absolute; top: 0px; left: 0px; z-index: 1; display: block; height:436px; width: 544px;"/>
+        <img src="контент/footel2.png" alt="свечение" style="position: absolute; bottom: 0px; right: 0px; z-index: 1; display: block; height:436px; width: 799px;"/>
+        <img src="контент/logofordark.png" alt="логотип" style="position: absolute; top: 90px; left: 609px; z-index: 2; display: block; width: 319px; height: 99px;"/>
+        <div style="display: flex; justify-content: space-between; width: 1033px; margin-top: 244px; margin-left: 278px; z-index: 2;">
+            <div style="color:#FEFEFC; font-size: 15px;">
+                <p style="margin: 0px 0px 5px 0px;">
+                    <a href="login.html?role=applicant" class="footer-link" style="cursor: pointer;">Создать аккаунт соискателя</a>
+                </p>
+                <p style="margin: 0px 0px 5px 0px;">
+                    <a href="login.html?role=employer" class="footer-link" style="cursor: pointer;">Создать аккаунт работодателя</a>
+                </p>
+                <p style="margin: 0px 0px 5px 0px;">
+                    <a href="login.html?role=curator" class="footer-link" style="cursor: pointer;">Стать куратором</a>
+                </p>
+                <p style="margin: 0px 0px 5px 0px;">
+                    <a href="index.html#map" class="footer-link" style="cursor: pointer;">Карта возможностей</a>
+                </p>
+            </div>
+            <div style="color:#FEFEFC; font-size: 15px;">
+                <p style="margin: 0px 0px 5px 0px;">+7 (3852) 348-310</p>
+                <p style="margin: 0px 0px 5px 0px;">tramplin@work.org</p>
+                <p style="margin: 0px 0px 5px 0px;">Условия использования</p>
+                <p style="margin: 0px 0px 5px 0px;">Политика конфиденциальности</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // ========== НАВИГАЦИЯ ПО ВКЛАДКАМ ==========
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButtons = document.querySelectorAll('.btn-custom');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            menuButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    menuButtons.forEach(btn => btn.classList.remove('selected'));
+                    this.classList.add('selected');
+
+                    tabContents.forEach(tab => {
+                        tab.style.display = 'none';
+                    });
+
+                    const targetId = this.getAttribute('data-target');
+                    const activeTab = document.getElementById(targetId);
+                    if (activeTab) {
+                        activeTab.style.display = 'block';
+                    }
+                });
+            });
+
+            const defaultTab = document.getElementById('infoContent');
+            if (defaultTab) {
+                defaultTab.style.display = 'block';
+            }
+        });
+
+        // ========== ЗАГРУЗКА ДАННЫХ ==========
+        document.addEventListener('DOMContentLoaded', async function() {
+            const userId = localStorage.getItem('userId');
+            const userRole = localStorage.getItem('userRole');
+            const userName = localStorage.getItem('userName');
+            
+            if (!userId) {
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            if (userRole !== 'employer') {
+                window.location.href = 'index.html';
+                return;
+            }
+            
+            const companyNameElement = document.querySelector('.vertical p:last-child');
+            if (companyNameElement && userName) {
+                companyNameElement.textContent = userName;
+            }
+            
+            try {
+                const response = await fetch(`api/get-profile.php?user_id=${userId}`);
+                const result = await response.json();
+                
+                if (result.success) {
+                    const data = result.data;
+                    
+                    document.getElementById('applicantLastName').value = data.company_name || '';
+                    document.getElementById('companyDescription').value = data.description || '';
+                    document.getElementById('applicantUniversity').value = data.city || '';
+                    document.getElementById('regEmail').value = data.email || '';
+                    document.getElementById('applicantBirthDay').value = data.phone || '';
+                    document.getElementById('applicantCity').value = data.website || '';
+                    document.getElementById('applicantGraduationYear').value = data.address || '';
+                    
+                    const emailBlock = document.querySelector('.vertical p:first-of-type');
+                    if (emailBlock && data.email) {
+                        emailBlock.textContent = data.email;
+                    }
+                    
+                    if (data.industry) {
+                        const savedIndustries = data.industry.split(', ');
+                        document.querySelectorAll('.checkbox-container input[type="checkbox"]').forEach(cb => {
+                            const label = cb.closest('.checkbox-label');
+                            const industryText = label?.querySelector('.checkbox-text')?.innerText;
+                            if (industryText && savedIndustries.includes(industryText)) {
+                                cb.checked = true;
+                            }
+                        });
+                    }
+                    // Логотип
+                    if (data.logo_path) {
+                        const photoLabel = document.querySelector('.file-upload-label');
+                        if (photoLabel) {
+                            let img = photoLabel.querySelector('.avatar-img');
+                            if (!img) {
+                                img = document.createElement('img');
+                                img.className = 'avatar-img';
+                                photoLabel.insertBefore(img, photoLabel.firstChild);
+                            }
+                            img.src = `uploads/logos/${data.logo_path}`;
+                            img.style.width = '150px';
+                            img.style.height = '150px';
+                            img.style.objectFit = 'cover';
+                            img.style.borderRadius = '20px';
+                            img.style.marginBottom = '10px';
+                            
+                            const span = photoLabel.querySelector('span');
+                            if (span) span.style.display = 'none';
+                            const cameraImg = photoLabel.querySelector('img:not(.avatar-img)');
+                            if (cameraImg) cameraImg.style.display = 'none';
+                        }
+                    }
+                    
+                    // Фото офиса
+                    for (let i = 1; i <= 5; i++) {
+                        const photoPath = data[`office_photo_${i}`];
+                        if (photoPath) {
+                            const previewImg = document.getElementById(`officePhotoPreview${i}`);
+                            const fileInfo = document.getElementById(`officePhotoInfo${i}`);
+                            const fileNameSpan = document.getElementById(`officeFileName${i}`);
+                            
+                            if (previewImg) {
+                                previewImg.src = `uploads/offices/${photoPath}`;
+                                previewImg.style.display = 'block';
+                                previewImg.style.width = '100px';
+                                previewImg.style.height = '100px';
+                                previewImg.style.objectFit = 'cover';
+                                previewImg.style.borderRadius = '10px';
+                            }
+                            if (fileInfo) {
+                                fileInfo.style.display = 'flex';
+                                fileInfo.style.flexDirection = 'column';
+                                fileInfo.style.alignItems = 'center';
+                            }
+                            if (fileNameSpan) {
+                                fileNameSpan.textContent = 'Фото загружено';
+                            }
+                        }
+                    }
+                }
+            } catch (error) {
+                console.error('Ошибка загрузки:', error);
+            }
+        });
+
+        // ========== ЗАГРУЗКА ЛОГОТИПА ==========
+        const logoInput = document.getElementById('logoFile');
+        if (logoInput) {
+            logoInput.addEventListener('change', async function(e) {
+                const file = e.target.files[0];
+                if (!file) return;
+                
+                const userId = localStorage.getItem('userId');
+                if (!userId) {
+                    alert('Ошибка: пользователь не авторизован');
+                    return;
+                }
+                
+                // Показываем превью
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const logoLabel = document.querySelector('.file-upload-label');
+                    let img = logoLabel.querySelector('.avatar-img');
+                    if (!img) {
+                        img = document.createElement('img');
+                        img.className = 'avatar-img';
+                        logoLabel.insertBefore(img, logoLabel.firstChild);
+                    }
+                    img.src = event.target.result;
+                    img.style.width = '150px';
+                    img.style.height = '150px';
+                    img.style.objectFit = 'cover';
+                    img.style.borderRadius = '20px';
+                    img.style.marginBottom = '10px';
+                    
+                    const span = logoLabel.querySelector('span');
+                    if (span) span.style.display = 'none';
+                    const cameraImg = logoLabel.querySelector('img:not(.avatar-img)');
+                    if (cameraImg) cameraImg.style.display = 'none';
+                };
+                reader.readAsDataURL(file);
+                
+                // Отправляем на сервер
+                const formData = new FormData();
+                formData.append('logo', file);
+                formData.append('user_id', userId);
+                
+                try {
+                    const response = await fetch('api/upload-logo.php', {
+                        method: 'POST',
+                        body: formData
+                    });
+                    const result = await response.json();
+                    if (result.success) {
+                        alert('✅ Логотип загружен!');
+                        setTimeout(() => location.reload(), 500);
+                    } else {
+                        alert('Ошибка: ' + result.message);
+                    }
+                } catch (error) {
+                    console.error('Fetch error:', error);
+                    alert('Ошибка соединения с сервером');
+                }
+            });
+        }
+
+        // ========== КНОПКА "СОХРАНИТЬ" ==========
+        const saveBtn = document.getElementById('saveBtn');
+        if (saveBtn) {
+            saveBtn.addEventListener('click', async function() {
+                const userId = localStorage.getItem('userId');
+                if (!userId) {
+                    alert('Ошибка: пользователь не авторизован');
+                    return;
+                }
+                
+                const industries = [];
+                document.querySelectorAll('.checkbox-container input[type="checkbox"]').forEach(cb => {
+                    if (cb.checked) {
+                        const label = cb.closest('.checkbox-label');
+                        const industryText = label?.querySelector('.checkbox-text')?.innerText;
+                        if (industryText) industries.push(industryText);
+                    }
+                });
+                
+                const updateData = {
+                    user_id: userId,
+                    role: 'employer',
+                    companyName: document.getElementById('applicantLastName').value,
+                    description: document.getElementById('companyDescription').value,
+                    city: document.getElementById('applicantUniversity').value,
+                    email: document.getElementById('regEmail').value,
+                    phone: document.getElementById('applicantBirthDay').value,
+                    website: document.getElementById('applicantCity').value,
+                    address: document.getElementById('applicantGraduationYear').value,
+                    industry: industries.join(', ')
+                };
+                
+                try {
+                    const response = await fetch('api/update-profile.php', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(updateData)
+                    });
+                    const result = await response.json();
+                    if (result.success) {
+                        alert('✅ Данные сохранены!');
+                        setTimeout(() => location.reload(), 500);
+                    } else {
+                        alert('❌ Ошибка: ' + result.message);
+                    }
+                } catch (error) {
+                    console.error('Fetch error:', error);
+                    alert('❌ Ошибка соединения с сервером');
+                }
+            });
+        }
+        
+        // ========== КНОПКА "УДАЛИТЬ" ==========
+        const deleteBtn = document.getElementById('deleteBtn');
+        if (deleteBtn) {
+            deleteBtn.addEventListener('click', function() {
+                if (confirm('⚠️ Удалить профиль?')) {
+                    alert('Функция в разработке');
+                }
+            });
+        }
+
+        // ========== ЗАГРУЗКА ФОТО ОФИСА ==========
+        for (let i = 1; i <= 5; i++) {
+            const photoInput = document.getElementById(`officePhoto${i}`);
+            if (photoInput) {
+                photoInput.addEventListener('change', (function(index) {
+                    return async function(e) {
+                        const file = e.target.files[0];
+                        if (!file) return;
+                        
+                        const userId = localStorage.getItem('userId');
+                        if (!userId) {
+                            alert('Ошибка: пользователь не авторизован');
+                            return;
+                        }
+                        
+                        // Показываем превью
+                        const reader = new FileReader();
+                        reader.onload = function(event) {
+                            const previewImg = document.getElementById(`officePhotoPreview${index}`);
+                            if (previewImg) {
+                                previewImg.src = event.target.result;
+                                previewImg.style.display = 'block';
+                            }
+                            const fileNameSpan = document.getElementById(`officeFileName${index}`);
+                            if (fileNameSpan) {
+                                fileNameSpan.textContent = file.name;
+                            }
+                            const fileInfo = document.getElementById(`officePhotoInfo${index}`);
+                            if (fileInfo) {
+                                fileInfo.style.display = 'flex';
+                                fileInfo.style.flexDirection = 'column';
+                                fileInfo.style.alignItems = 'center';
+                            }
+                        };
+                        reader.readAsDataURL(file);
+                        
+                        // Отправляем на сервер
+                        const formData = new FormData();
+                        formData.append('photo', file);
+                        formData.append('user_id', userId);
+                        formData.append('photo_index', index);
+                        
+                        try {
+                            const response = await fetch('api/upload-office-photo.php', {
+                                method: 'POST',
+                                body: formData
+                            });
+                            const result = await response.json();
+                            if (result.success) {
+                                alert(`✅ Фото ${index} загружено!`);
+                                setTimeout(() => location.reload(), 500);
+                            } else {
+                                alert('Ошибка: ' + result.message);
+                            }
+                        } catch (error) {
+                            console.error('Fetch error:', error);
+                            alert('Ошибка соединения с сервером');
+                        }
+                    };
+                })(i));
+            }
+        }
+        // ========== УДАЛЕНИЕ ФОТО ОФИСА ==========
+        document.querySelectorAll('.remove-office-photo').forEach(btn => {
+            btn.addEventListener('click', async function() {
+                const photoIndex = this.getAttribute('data-photo');
+                const userId = localStorage.getItem('userId');
+                if (!userId) {
+                    alert('Ошибка: пользователь не авторизован');
+                    return;
+                }
+                
+                if (confirm(`Удалить фото ${photoIndex}?`)) {
+                    try {
+                        const response = await fetch('api/delete-office-photo.php', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ user_id: userId, photo_index: photoIndex })
+                        });
+                        const result = await response.json();
+                        if (result.success) {
+                            alert('✅ Фото удалено');
+                            setTimeout(() => location.reload(), 500);
+                        } else {
+                            alert('Ошибка: ' + result.message);
+                        }
+                    } catch (error) {
+                        alert('Ошибка соединения с сервером');
+                    }
+                }
+            });
+        });
+
+        // ========== ЗАГРУЗКА НАЗВАНИЯ КОМПАНИИ ==========
+async function loadCompanyName() {
+    const userId = localStorage.getItem('userId');
+    if (!userId) return;
+    
+    try {
+        const response = await fetch(`api/get-profile.php?user_id=${userId}`);
+        const result = await response.json();
+        if (result.success && result.data.company_name) {
+            document.getElementById('companyNameDisplay').value = result.data.company_name;
+        }
+    } catch (error) {
+        console.error('Ошибка загрузки компании:', error);
+    }
+}
+
+// ========== СОЗДАНИЕ ВОЗМОЖНОСТИ ==========
+document.getElementById('opportunityForm')?.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const userId = localStorage.getItem('userId');
+    if (!userId) {
+        alert('Ошибка: пользователь не авторизован');
+        return;
+    }
+    
+    // Собираем навыки
+    const skills = [];
+    document.querySelectorAll('#opportunityForm .skill-checkbox:checked').forEach(cb => {
+        skills.push(cb.value);
+    });
+    
+    const data = {
+        employer_id: userId,
+        title: document.getElementById('opportunityTitle').value,
+        description: document.getElementById('opportunityDescription').value,
+        type: document.getElementById('opportunityType').value,
+        format: document.getElementById('opportunityFormat').value,
+        city: document.getElementById('city').value,
+        start_date: document.getElementById('startDate').value,
+        event_time: document.getElementById('eventTime').value,
+        price: document.getElementById('price').value,
+        salary_min: document.getElementById('salaryMin').value || null,
+        skills: skills
+    };
+    
+    try {
+        const response = await fetch('api/create-opportunity.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+        const result = await response.json();
+        
+        if (result.success) {
+            alert('✅ Возможность создана!');
+            document.getElementById('opportunityForm').reset();
+            loadOpportunities(); // Обновляем список
+        } else {
+            alert('❌ Ошибка: ' + result.message);
+        }
+    } catch (error) {
+        console.error('Ошибка:', error);
+        alert('Ошибка соединения с сервером');
+    }
+});
+
+    // ========== ОЧИСТКА ФОРМЫ ==========
+    document.getElementById('clearFormBtn')?.addEventListener('click', function() {
+        document.getElementById('opportunityForm').reset();
+        document.querySelectorAll('#opportunityForm .skill-checkbox').forEach(cb => cb.checked = false);
+    });
+
+    // ========== ЗАГРУЗКА СПИСКА ВОЗМОЖНОСТЕЙ ==========
+    async function loadOpportunities() {
+        const userId = localStorage.getItem('userId');
+        if (!userId) return;
+        
+        const container = document.getElementById('opportunitiesList');
+        container.innerHTML = '<p style="color: #6E6E6E; text-align: center;">Загрузка...</p>';
+        
+        try {
+            const response = await fetch(`api/get-opportunities.php?employer_id=${userId}`);
+            const result = await response.json();
+            
+            if (result.success && result.data.length > 0) {
+                container.innerHTML = result.data.map(opp => createOpportunityCard(opp)).join('');
+            } else {
+                container.innerHTML = `
+                    <div style="text-align: center; padding: 40px;">
+                        <img src="контент/atomicon.png" style="width: 100px; margin-bottom: 20px;">
+                        <p style="color: #6E6E6E;">Вы ещё не создали ни одной карточки возможностей.<br>Сделайте это в разделе "Создать возможность".</p>
+                    </div>
+                `;
+            }
+        } catch (error) {
+            console.error('Ошибка загрузки:', error);
+            container.innerHTML = '<p style="color: red;">Ошибка загрузки</p>';
+        }
+    }
+
+    // ========== СОЗДАНИЕ КАРТОЧКИ ВОЗМОЖНОСТИ ==========
+    function createOpportunityCard(opp) {
+        const typeLabels = {
+            vacancy: 'Вакансия',
+            internship: 'Стажировка',
+            event: 'Карьерное мероприятие',
+            mentorship: 'Менторская программа'
+        };
+        
+        const formatIcon = opp.format === 'online' ? '🌐' : '📍';
+        const locationText = opp.format === 'offline' && opp.city ? ` ${opp.city}` : '';
+        
+        const priceText = opp.type === 'vacancy' && opp.salary_min ? `От ${opp.salary_min.toLocaleString()} руб.` : 
+                        opp.price ? opp.price : 'Бесплатно';
+        
+        const dateText = opp.start_date ? `Старт: ${new Date(opp.start_date).toLocaleDateString('ru-RU')}` : '';
+        const timeText = opp.event_time ? ` ${opp.event_time.substring(0, 5)}` : '';
+        
+        const skillsHtml = opp.skills?.map(skill => 
+            `<span style="background: #f0f0f0; padding: 4px 12px; border-radius: 20px; font-size: 12px;">${skill}</span>`
+        ).join('') || '';
+        
+        return `
+            <div style="background: white; border: 1px solid #E0E0E0; border-radius: 24px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+                    <div>
+                        <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 5px;">${escapeHtml(opp.title)}</h3>
+                        <div style="display: flex; gap: 12px; margin-bottom: 10px;">
+                            <span style="background: #9A84FF20; color: #9A84FF; padding: 4px 12px; border-radius: 20px; font-size: 12px;">${typeLabels[opp.type]}</span>
+                            <span style="color: #6E6E6E; font-size: 14px;">${formatIcon} ${opp.format === 'online' ? 'Онлайн' : 'Офлайн'}${locationText}</span>
+                        </div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 18px; font-weight: 600; color: #9A84FF;">${escapeHtml(priceText)}</div>
+                    </div>
+                </div>
+                
+                <p style="color: #4A4A4A; line-height: 1.5; margin-bottom: 15px;">${escapeHtml(opp.description)}</p>
+                
+                <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px;">
+                    ${skillsHtml}
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E0E0E0; padding-top: 15px;">
+                    <div style="color: #6E6E6E; font-size: 14px;">
+                        ${dateText}${timeText}
+                        ${opp.created_at ? `<br>Опубликовано: ${new Date(opp.created_at).toLocaleDateString('ru-RU')}` : ''}
+                    </div>
+                    <button class="edit-opportunity" data-id="${opp.id}" style="background: none; border: none; color: #9A84FF; cursor: pointer;">Редактировать</button>
+                </div>
+            </div>
+        `;
+    }
+
+    function escapeHtml(str) {
+        if (!str) return '';
+        return str.replace(/[&<>]/g, function(m) {
+            if (m === '&') return '&amp;';
+            if (m === '<') return '&lt;';
+            if (m === '>') return '&gt;';
+            return m;
+        });
+    }
+
+    // ========== ЗАГРУЗКА ПРИ ПЕРЕКЛЮЧЕНИИ ВКЛАДКИ ==========
+    document.getElementById('responseBtn')?.addEventListener('click', () => {
+        setTimeout(() => loadOpportunities(), 100);
+    });
+
+    document.getElementById('favBtn')?.addEventListener('click', () => {
+        loadCompanyName();
+    });
+
+    // Загружаем при загрузке страницы
+    document.addEventListener('DOMContentLoaded', () => {
+        loadCompanyName();
+        loadOpportunities();
+    });
+    </script>
+    </body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link href="main.css" type="text/css" rel="stylesheet"/>
+    <link rel="icon" href="фавикон.ico" type="image/x-icon">
+    <title>Трамплин</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <a href="index.html" style="cursor: pointer;"><img src="контент/logofordark.png" class="logo" alt="логотип"></a>
+            <p class="headtext" style="margin-top: 15px;">Вакансии</p>
+            <p class="headtext" style="margin-top: 15px;">Работодателям</p>
+            <form class="search-form" id="searchForm">
+                <input type="text" 
+                    class="search-input" 
+                    placeholder="Поиск вакансий, стажировок, мероприя..."
+                    id="searchInput">
+                <button type="submit" class="search-button">
+                    <img src="searchicon2.svg" alt="поиск" style="width: 68px; height: 48px;">
+                </button>
+            </form>
+            <img src="контент/favouriteicon.svg" alt="избранное" style="margin-right: 20px;">
+            <a href="login.html" style="cursor: pointer;"><img src="контент/accounticon.svg" alt="профиль"></a>
+        </div>
+    </header>
+    <main>
+        <div class="frame1">
+            <img src="контент/elementone.png" id="left">
+            <div class="block">
+                <p class="zag"><span style="color: #9A84FF;">Трамплин</span> — твой старт в IT-карьере</p>
+                <p class="podz">Стажировки, менторство, вакансии для студентов и выпускников. Найди работу мечты или найди таланты</p>
+                <div class="btns">
+                    <a href="login.html?role=applicant" class="btn-custom1" target="_blank">Найти работу</a>
+                    <a href="login.html?role=employer" class="btn-custom2" target="_blank">Найти сотрудников</a>
+                </div>
+            </div>
+            <img src="контент/elementtwo.png" id="right">
+        </div>
+        <div class="frame2">
+            <div class="blocks" style="height: 160px;">
+                <p class="zag2">Что такое «Трамплин»?</p>
+                <p class="text" style="width: 283px; font-size: 19px;">Трамплин — это экосистема, где студенты не просто ищут работу, а строят карьеру с 0</p>
+            </div>
+            <div class="blocks" style="height: 280px;">
+                <div class="block1">
+                    <div style="position: relative; display: inline-block;">
+                        <p class="zag2" style="font-size: 25px; margin-bottom: 3px;">Студенты и выпускники</p>
+                        <img src="контент/wavyunderline.png" alt="подчеркивание" style="position: absolute; bottom: -5px; left: 0; z-index: -1;">
+                    </div>
+                    <p class="text" style="margin-top: 145px;">Находите стажировку, ментора, вакансию для Junior <br> или карьерное мероприятие. Развивайте навыки, стройте <br> нетворкинг и получайте офферы от ведущих IT-компаний.</p>
+                </div>
+                <div class="block2" style="position: relative; display: inline-block;">
+                    <img src="контент/ellipse1.png" alt="свечение" style="height: 125px; width: 125px; position: absolute; top: 0px; right: 0px; z-index: 1; border-radius: 33px;"/>
+                    <p class="zag2" style="font-size: 25px; position: relative; display: inline-block;">Работодатели</p>
+                    <p class="text" style="margin-top: 115px;">Размещайте вакансии <br> и находите подходящих кандидатов.</p>
+                </div>
+                <div class="block2" style="position: relative; display: inline-block;">
+                    <img src="контент/ellipse2.png" alt="свечение" style="height: 173px; width: 173; position: absolute; bottom: 0px; right: 0px; z-index: 1; border-radius: 33px;"/>
+                    <p class="zag2" style="font-size: 25px; width: 165px;">Кураторы и ВУЗы</p>
+                    <p class="text" style="margin-top: 110px;">Модерируйте контент и помогайте студентам строить карьеру.</p>
+                </div>
+            </div>
+        </div>
+        <div class="frame3" style="position: relative; display: inline-block;">
+            <p class="zag2">Как это работает</p>
+            <img src="контент/graph.png" alt="график" style="width: 1280px; z-index: -2;">
+            <p class="steps">Шаг 1</p>
+            <p class="steppers" style="top:395px; left:130px">Выбери свою роль</p>
+            <p class="steps" style="top:230px; left:290px">Шаг 2</p>
+            <p class="steppers" style="top:210px; left:265px">Заполни профиль</p>
+            <p class="steps" style="top:310px; left:570px">Шаг 3</p>
+            <p class="steppers" style="top:340px; left:490px">Настрой карьерные интересы</p>
+            <p class="steps" style="top:155px; left:855px">Шаг 4</p>
+            <p class="steppers" style="top:135px; left:730px">Ищи возможности на карте или в ленте</p>
+            <p class="steps" style="top:280px; left:1110px">Шаг 5</p>
+            <p class="steppers" style="top:310px; left:1030px">Откликайся и взаимодействуй</p>
+            <p class="steps" style="top:40px; right:140px">Шаг 6</p>
+            <p class="steppers" style="top:20px; right:140px">Строй карьеру и получай офферы</p>
+        </div>
+        <div class="frame4" style="position: relative; z-index: -2; margin-bottom: 5%;">
+            <p class="zag2" style="color:#FEFEFC; text-indent: 45%; margin-bottom: 25px;">Мы переосмыслили поиск работы — теперь вместо бесконечных списков интерактивная карта с маркерами возможностей</p>
+            <p class="text2" style="width: 580px; margin-left: 45%;">Офисные вакансии и очные мероприятия отображаются <br> по точному адресу, а удалённые позиции — по городу <br> работодателя. Так вы сразу видите, где находятся интересующие вас компании, и можете оценить варианты <br> в контексте знакомой географии.</p>
+            <div class="block4">
+                <p class="opis">Маркеры возможностей</p>
+                <p class="text2">Каждая вакансия, стажировка, менторская программа или мероприятие это отдельный маркер. Цвет зависит от типа возможности.</p>
+            </div>
+            <div class="block4">
+                <p class="opis">Модульная карточка</p>
+                <p class="text2">При наведении на маркер появляется краткая информация: название, компания, зарплата, ключевые навыки. Кликните, чтобы открыть всю карточку.</p>
+            </div>
+            <div class="block4">
+                <p class="opis">Фильтры</p>
+                <p class="text2" style="margin-bottom: 0px;">Сортируйте по навыкам, зарплате, формату работы и типу возможности.</p>
+            </div>
+            <img src="контент/russianmap.png" alt="Карта России" style="width: 960px; position: absolute; bottom: 50px; right: 0px; z-index: -1;"/>
+        </div>
+        <div class="frame5" id="map">
+            <div class="vib">
+                <select class="form-select" aria-label="Default select example" style="width: 223px;">
+                    <option selected>Тип возможности</option>
+                    <option value="1">Вакансия</option>
+                    <option value="2">Стажировка</option>
+                    <option value="3">Карьерное мероприятие</option>
+                    <option value="3">Менторская программа</option>
+                </select>
+                <select class="form-select" aria-label="Default select example" style="width: 208px;">
+                    <option selected>Формат: онлайн</option>
+                    <option value="1">Онлайн</option>
+                    <option value="2">Офлайн</option>
+                </select>
+                <select class="form-select" aria-label="Default select example" style="width: 192px";>
+                    <option selected>Тип занятости</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+                <select class="form-select" aria-label="Default select example" style="width: 133px";>
+                    <option selected>Навыки</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+                <select class="form-select" aria-label="Default select example" style="width: 148px";>
+                    <option selected>Зарплата</option>
+                    <option value="1">От</option>
+                    <option value="2">До</option>
+                </select>
+                <select class="form-select" aria-label="Default select example" style="width: 117px;">
+                    <option selected>Карта</option>
+                    <option value="1">Карта</option>
+                    <option value="2">Список</option>
+                </select>
+            </div>
+            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Afffa32b6223f4ae79a735744ee9efc7930a0b1794432fd99c76b2cb473766bce&amp;width=1280&amp;height=500&amp;lang=en_FR&amp;scroll=true"></script>
+        </div>
+        <div class="frame6">
+            <div class="blocks" style="margin-bottom: 5%;">
+                <p class="zag2" style="width: 743px;">Ближайшие онлайн-мероприятия</p>
+                <p class="text" style="width: 380px;">Участвуйте в прямых эфирах, задавайте вопросы представителям компаний <br> и узнавайте о вакансиях первыми</p>
+            </div>
+            <div class="blocks" style="margin-bottom: 25px;">
+                <div class="block3" style="position: relative; display: inline-block;">
+                    <img src="контент/piccard1.png" alt="Как попасть на стажировку в IT" style="width: 380px;"/>
+                    <div class="block-status">
+                        <p class="status" style="margin-right: 44%;">19 марта, 19:00 мск</p>
+                        <img src="контент/minikrug.png" alt="онлайн" style="width: 15px; height: 15px;">
+                        <p class="status">онлайн</p>
+                    </div>
+                    <img src="контент/ellipseforcards.png" alt="свечение" style="height: 181px; width: 181px; position: absolute; top: 0px; left: 0px; z-index: -1; border-radius: 33px;"/>
+                    <p class="zag3" style="margin-bottom: 3px; margin-top: 15px;">Как попасть на стажировку в IT</p>
+                    <p class="text" style="width: 400px; font-size: 15px;">HR-специалисты и разработчики расскажут, как пройти отбор и получить оффер. Разбор резюме участников.</p>
+                </div>
+                <div class="block3" style="position: relative; display: inline-block;">
+                    <img src="контент/piccard2.png" alt="Трамплин-хакатон" style="width: 380px;"/>
+                    <div class="block-status">
+                        <p class="status" style="margin-right: 58%;">20-22 марта</p>
+                        <img src="контент/minikrug.png" alt="онлайн" style="width: 15px; height: 15px;">
+                        <p class="status">онлайн</p>
+                    </div>
+                    <img src="контент/ellipseforcards.png" alt="свечение" style="height: 181px; width: 181px; position: absolute; top: 0px; left: 0px; z-index: -1; border-radius: 33px;"/>
+                    <p class="zag3" style="margin-bottom: 3px; margin-top: 15px;">Трамплин-хакатон</p>
+                    <p class="text" style="width: 400px; font-size: 15px;">48 часов на создание сервиса для психологов. Призы, стажировки и менторская поддержка.</p>
+                </div>
+                <div class="block3" style="position: relative; display: inline-block;">
+                    <img src="контент/piccard3.png" alt="День открытых дверей: СберТех" style="width: 380px;"/>
+                    <div class="block-status">
+                        <p class="status" style="margin-right: 43%;">24 марта, 12:00 мск</p>
+                        <img src="контент/minikrug.png" alt="онлайн" style="width: 15px; height: 15px;">
+                        <p class="status">онлайн</p>
+                    </div>
+                    <img src="контент/ellipseforcards.png" alt="свечение" style="height: 181px; width: 181px; position: absolute; top: 0px; left: 0px; z-index: -1; border-radius: 33px;"/>
+                    <p class="zag3" style="margin-bottom: 3px; margin-top: 15px;">День открытых дверей: СберТех</p>
+                    <p class="text" style="width: 400px; font-size: 15px;">Прямой эфир с командами разработки. <br> Вакансии для стажеров и Junior-специалистов.</p>
+                </div>
+            </div>
+            <div class="blocks" style="margin-top: 0px; margin-bottom: 0%;">
+                <div class="block3" style="position: relative; display: inline-block;">
+                    <img src="контент/piccard4.png" alt="Git и GitHub: воркшоп" style="width: 380px;"/>
+                    <div class="block-status">
+                        <p class="status" style="margin-right: 43%;">26 марта, 14:00 мск</p>
+                        <img src="контент/minikrug.png" alt="онлайн" style="width: 15px; height: 15px;">
+                        <p class="status">онлайн</p>
+                    </div>
+                    <img src="контент/ellipseforcards.png" alt="свечение" style="height: 181px; width: 181px; position: absolute; top: 0px; left: 0px; z-index: -1; border-radius: 33px;"/>
+                    <p class="zag3" style="margin-bottom: 3px; margin-top: 15px;">Git и GitHub: воркшоп</p>
+                    <p class="text" style="width: 400px; font-size: 15px;">Разбор веток, merge, rebase и commit-сообщений. Практические задания и чек-лист для участников.</p>
+                </div>
+                <div class="block3" style="position: relative; display: inline-block;">
+                    <img src="контент/piccard5.png" alt="Вопросы Senior-разработчику" style="width: 380px;"/>
+                    <div class="block-status">
+                        <p class="status" style="margin-right: 43%;">29 марта, 18:00 мск</p>
+                        <img src="контент/minikrug.png" alt="онлайн" style="width: 15px; height: 15px;">
+                        <p class="status">онлайн</p>
+                    </div>
+                    <img src="контент/ellipseforcards.png" alt="свечение" style="height: 181px; width: 181px; position: absolute; top: 0px; left: 0px; z-index: -1; border-radius: 33px;"/>
+                    <p class="zag3" style="margin-bottom: 3px; margin-top: 15px;">Вопросы Senior-разработчику</p>
+                    <p class="text" style="width: 400px; font-size: 15px;">Открытый диалог с опытными разработчиками. Любой вопрос о карьере, технологиях и балансе.</p>
+                </div>
+                <div class="block3" style="position: relative; display: inline-block; align-content: center; width: 410px; padding: 20px;">
+                    <img src="контент/form.png" alt="свечение" style="position: absolute; bottom: 0px; right: 0px; z-index: -1; border-radius: 33px;"/>
+                    <p class="zag3" style="font-size: 25px; margin-bottom: 3px; margin-top: 15px;">Хотите провести встречу?</p>
+                    <p class="text" style="width: 400px; font-size: 16px;">Напишите на почту tramplin@work.org, <br> чтобы получить больше подробностей</p>
+                </div>
+            </div>
+        </div>
+        <div class="frame7">
+            <p class="zag2" style="text-indent: 45%; margin-bottom: 25px;">Остались вопросы? Тщательно подготовили ответы на самое главное</p>
+            <img src="контент/Line 1.svg" alt="линия разделения" width="1300px">
+            <div class="faq-container">
+                <div class="item">
+                    <div class="quest">
+                        <img src="контент/moreicon.svg" alt="плюсик" class="plus" style="align-self: center; justify-self: center; width: 50px;"/>
+                        <p class="zag2" style="font-size: 25px;">Кто может зарегистрироваться на платформе?</p>
+                    </div>
+                    <div class="answ">
+                        <p>Платформа открыта для трех категорий пользователей: соискатели, работодатели и кураторы. Соискатели — студенты и выпускники, которые только начинают свой старт в карьере. Работодатели — компании и индивидуальные предприниматели, предлагающие возможности для профессионального развития. Кураторы — представители вузов или нанятые модераторы, которые администрируют платформу, верифицируют работодателей и модерируют контент.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="quest">
+                        <img src="контент/moreicon.svg" alt="плюсик" class="plus" style="align-self: center; justify-self: center; width: 50px;"/>
+                        <p class="zag2" style="font-size: 25px;">Как происходит верификация компании? Зачем это нужно?</p>
+                    </div>
+                    <div class="answ">
+                        <p>Верификация — это подтверждение, что компания реальна и добросовестна. Мы предлагаем несколько способов:</p>
+                        <ol>
+                            <li>ИНН и сайт — вы указываете ИНН и ссылку на официальный сайт (если имеется), мы проверяем данные через открытые реестры;</li>
+                            <li>Документы — загрузите выписку ЕГРЮЛ или другой подтверждающий документ.</li>
+                        </ol>
+                        <p>Верификация защищает соискателей от фейковых вакансий и мошенников, а также повышает доверие и видимость вакансий.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="quest">
+                        <img src="контент/moreicon.svg" alt="плюсик" class="plus" style="align-self: center; justify-self: center; width: 50px;"/>
+                        <p class="zag2" style="font-size: 25px;">Как настроить приватность профиля? Кто может видеть мои отклики?</p>
+                    </div>
+                    <div class="answ">
+                        <p>В личном кабинете соискателя есть настройки приватности. Вы можете выбрать один из трёх вариантов:</p>
+                        <ol>
+                            <li>Только я — ваш профиль, резюме и отклики видите только вы и работодатели, которым вы откликнулись;</li>
+                            <li>Только мои контакты — информацию видят добавленные вами профессиональные контакты (друзья на платформе);</li>
+                            <li>Все авторизованные пользователи — ваш профиль открыт для нетворкинга, другие соискатели могут видеть ваши интересы и рекомендовать вас на вакансии.</li>
+                        </ol>
+                        <p>Отклики на конкретные вакансии всегда видны только вам и работодателю, разместившему вакансию.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="quest">
+                        <img src="контент/moreicon.svg" alt="плюсик" class="plus" style="align-self: center; justify-self: center; width: 50px;"/>
+                        <p class="zag2" style="font-size: 25px;">Что такое нетворкинг на платформе и как им пользоваться?</p>
+                    </div>
+                    <div class="answ">
+                        <p>Нетворкинг — это возможность находить профессиональные контакты среди других соискателей. Вы можете: добавлять других пользователей в список контактов; видеть карьерные интересы своих контактов; рекомендовать друзей на вакансии или мероприятия, которые им подходят; получать рекомендации от других пользователей.</p>
+                        <p>Это помогает искать работу не в одиночку, а в сообществе: вместе готовиться к собеседованиям, обмениваться полезными контактами и поддерживать друг друга на старте карьеры.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="quest">
+                        <img src="контент/moreicon.svg" alt="плюсик" class="plus" style="align-self: center; justify-self: center; width: 50px;"/>
+                        <p class="zag2" style="font-size: 25px;">Что такое кураторы и какова их роль на платформе?</p>
+                    </div>
+                    <div class="answ">
+                        <p>Кураторы — это представители вузов или нанятые модераторы, которые обеспечивают качество контента на платформе. В их задачи входит: верификация компаний; модерация карточек возможностей; управление пользователями.</p>
+                        <p>По умолчанию в системе есть один администратор, который может создавать учетные записи других кураторов. Вузы могут назначать своих представителей для работы с платформой.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="quest">
+                        <img src="контент/moreicon.svg" alt="плюсик" class="plus" style="align-self: center; justify-self: center; width: 50px;"/>
+                        <p class="zag2" style="font-size: 25px;">Платформа бесплатная? Есть ли скрытые платежи?</p>
+                    </div>
+                    <div class="answ">
+                        <p>Да, «Трамплин» полностью бесплатен для всех пользователей. Соискатели могут бесплатно искать стажировки, откликаться на вакансии, участвовать в мероприятиях и пользоваться нетворкингом. Работодатели бесплатно размещают вакансии, стажировки и мероприятия после прохождения верификации. Вузы и кураторы также получают доступ к инструментам модерации без каких-либо платежей.</p>
+                        <p>Никаких скрытых комиссий и платных подписок — платформа создана для поддержки карьерного развития студентов и выпускников.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <script>
+        const items = document.querySelectorAll('.item');
+        items.forEach(item => {
+            const question = item.querySelector('.quest');
+            question.addEventListener('click', () => {
+                items.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                item.classList.toggle('active');
+            });
+        });
+        </script>
+    </main>
+    <footer>
+        <img src="контент/footel1.png" alt="свечение" style="position: absolute; top: 0px; left: 0px; z-index: 1; display: block; height:436px; width: 544px;"/>
+        <img src="контент/footel2.png" alt="свечение" style="position: absolute; bottom: 0px; right: 0px; z-index: 1; display: block; height:436px; width: 799px;"/>
+        <img src="контент/logofordark.png" alt="логотип" style="position: absolute; top: 90px; left: 609px; z-index: 2; display: block; width: 319px; height: 99px;"/>
+        <div style="display: flex; justify-content: space-between; width: 1033px; margin-top: 244px; margin-left: 278px; z-index: 2;">
+            <div style="color:#FEFEFC; font-size: 15px;">
+                <p style="margin: 0px 0px 5px 0px;">
+                    <a href="login.html?role=applicant" class="footer-link" style="cursor: pointer;">Создать аккаунт соискателя</a>
+                </p>
+                <p style="margin: 0px 0px 5px 0px;">
+                    <a href="login.html?role=employer" class="footer-link" style="cursor: pointer;">Создать аккаунт работодателя</a>
+                </p>
+                <p style="margin: 0px 0px 5px 0px;">
+                    <a href="login.html?role=curator" class="footer-link" style="cursor: pointer;">Стать куратором</a>
+                </p>
+                <p style="margin: 0px 0px 5px 0px;">
+                    <a href="#map" class="footer-link" style="cursor: pointer;">Карта возможностей</a>
+                </p>
+            </div>
+            <div style="color:#FEFEFC; font-size: 15px;">
+                <p style="margin: 0px 0px 5px 0px;">+7 (3852) 348-310</p>
+                <p style="margin: 0px 0px 5px 0px;">tramplin@work.org</p>
+                <p style="margin: 0px 0px 5px 0px;">Условия использования</p>
+                <p style="margin: 0px 0px 5px 0px;">Политика конфиденциальности</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

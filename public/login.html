@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link href="login.css" type="text/css" rel="stylesheet"/>
+    <link rel="icon" href="фавикон.ico" type="image/x-icon">
+    <title>Регистрация/вход</title>
+</head>
+<body>
+    <div class="frame">
+        <div class="card">
+            <img src="контент/elforreg1.png" alt="свечение" class="light" style="top: 0px; left: 0px;"/>
+            <p class="zag">Начните работу с платформой уже сейчас</p>
+            <a href="index.html" class="mainn">Вернуться на главную</a>
+            <img src="контент/elforreg2.png" alt="свечение" class="light" style="bottom: 0px; right: 0px;"/>
+        </div>
+        <div class="menu">
+            <img src="контент/logoforlight.png" alt="светлый логотип" style="width: 180px; height: 57px; margin-bottom: 74px;"/>            
+            <div id="step1" class="step-container">
+                <p style="font-size: 20px; font-weight:500; margin-bottom: 30px; text-align: center;">Выберите роль</p>
+                <div class="role-buttons">
+                    <button class="role-btn" data-role="applicant">Соискатель</button>
+                    <button class="role-btn" data-role="employer">Работодатель</button>
+                    <button class="role-btn" data-role="curator">Куратор</button>
+                </div>
+                <button class="btn-custom1" id="nextStepBtn">Регистрация/Вход</button>
+            </div>
+                <div id="step2" class="step-container" style="display: none;">
+                    <div id="userForms">
+                        <div class="switch-container">
+                            <div class="switch">
+                                <input type="radio" id="register-mode" name="auth-mode" value="register" checked>
+                                <label for="register-mode" class="switch-option">Регистрация</label>
+                                
+                                <input type="radio" id="login-mode" name="auth-mode" value="login">
+                                <label for="login-mode" class="switch-option">Вход</label>
+                                
+                                <div class="switch-slider"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Форма входа -->
+                        <div class="auth-form" id="loginForm" style="display: none;">
+                            <input type="email" class="form-input" placeholder="Email" id="loginEmail">
+                            <input type="password" class="form-input" placeholder="Пароль" id="loginPassword">
+                            <button class="btn-custom1 submit-btn" id="submitLogin" style="width: 380px;">Войти</button>
+                        </div>
+                        
+                        <!-- Форма регистрации (шаг 1) -->
+                        <div class="auth-form" id="registerForm">
+                            <input type="email" class="form-input" placeholder="Email" id="regEmail">
+                            <input type="text" class="form-input" placeholder="Отображаемое имя" id="regName">
+                            <input type="password" class="form-input" placeholder="Пароль" id="regPassword">
+                            <input type="password" class="form-input" placeholder="Подтверждение пароля" id="regConfirmPassword">
+                            <button class="btn-custom1 submit-btn" id="nextToProfileBtn" style="width: 380px;">Далее</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Дополнительная форма для соискателя (шаг 2) -->
+                    <div id="applicantProfileForm" class="step-container" style="display: none;">
+                        <p class="form-title">Заполните профиль</p>
+                        <div class="auth-form">
+                            <input type="text" class="form-input" placeholder="Фамилия" id="applicantLastName">
+                            <input type="text" class="form-input" placeholder="Имя" id="applicantFirstName">
+                            <input type="text" class="form-input" placeholder="Отчество (при наличии)" id="applicantPatronymic">
+                            <input type="text" class="form-input" placeholder="Учебное заведение" id="applicantUniversity">
+                            <input type="text" class="form-input" placeholder="Год окончания" id="applicantGraduationYear">
+                            <div class="checkbox-container">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="applicantStudyingNow">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">Учусь сейчас</span>
+                                </label>
+                            </div>
+                            <button class="btn-custom1 submit-btn" id="completeApplicantRegistration" style="width: 380px;">Завершить регистрацию</button>
+                        </div>
+                        <button class="back-btn" id="backToRegisterFromApplicant">← Назад</button>
+                    </div>
+                    
+                    <!-- Дополнительная форма для работодателя (шаг 2) -->
+                    <div id="employerProfileForm" class="step-container" style="display: none;">
+                        <p class="form-title">Верификация компании</p>
+                        <p style="font-size: 15px; color:#6E6E6E; text-align: center; width: 380px;">Верификация помогает соискателям убедиться, что ваша компания реальная и добросовестная. Это повысит доверие и увеличит отклики.</p>
+                        <!-- Переключатель способов верификации -->
+                        <div class="verification-switch-container">
+                            <div class="verification-switch">
+                                <input type="radio" id="inn-mode" name="verification-mode" value="inn" checked>
+                                <label for="inn-mode" class="verification-switch-option">ИНН + сайт</label>
+                                
+                                <input type="radio" id="egrul-mode" name="verification-mode" value="egrul">
+                                <label for="egrul-mode" class="verification-switch-option">Выписка ЕГРЮЛ</label>
+                                
+                                <div class="verification-switch-slider"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Форма для ИНН + сайт -->
+                        <div class="auth-form" id="innForm">
+                            <input type="text" class="form-input" placeholder="ИНН" id="employerInn">
+                            <input type="url" class="form-input" placeholder="Ссылка на сайт" id="employerWebsite" style="margin-bottom: 0px;">
+                            <p style="font-size: 13px; color:#6E6E6E; margin: 0px; text-align: center; width: 380px;">Результат верификации придёт на почту после модерации</p>
+                            <button class="btn-custom1 submit-btn" id="completeEmployerRegistration" style="width: 380px;">Завершить регистрацию</button>
+                        </div>
+                        
+                        <!-- Форма для выписки ЕГРЮЛ -->
+                        <div class="auth-form" id="egrulForm" style="display: none;">
+                            <div class="file-upload-container">
+                                <label class="file-upload-label" for="egrulFile">
+                                    <span>Загрузить файл</span>
+                                    <input type="file" id="egrulFile" accept=".pdf,.jpg,.png,.doc,.docx" style="display: none;">
+                                </label>
+                                <div class="uploaded-file-info" id="uploadedFileInfo" style="display: none;">
+                                    <span id="fileName"></span>
+                                    <button class="remove-file-btn" id="removeFileBtn">×</button>
+                                </div>
+                                <p style="font-size: 13px; color:#6E6E6E; margin: 0px; text-align: center; width: 380px;">Результат верификации придёт на почту после модерации</p>
+
+                            </div>
+                            <button class="btn-custom1 submit-btn" id="completeEmployerRegistrationEgrul" style="width: 380px;">Завершить регистрацию</button>
+                        </div>
+                        
+                        <button class="back-btn" id="backToRegisterFromEmployer">← Назад</button>
+                    </div>
+                    
+                    <!-- Для куратора (специальная форма) -->
+                    <div id="curatorForm" style="display: none;">
+                        <p class="message-text">Вход для кураторов</p>
+                        <p style="width: 380px; color:#6E6E6E; font-size: 15px; text-align: center;">Кураторам доступен только вход. Если Вы стали куратором, но ещё не получили email и пароль для входа, напишите на почту tramplin@work.org <br> <span style="color: #7455FF; text-decoration: underline;">Как стать куратором</span></p>
+                        <input type="email" class="form-input" placeholder="Email" id="curatorEmail" style="margin-bottom: 10px;">
+                        <input type="password" class="form-input" placeholder="Пароль" id="curatorPassword">
+                        <button class="btn-custom1 submit-btn" id="submitCuratorLogin" style="width: 380px;">Войти</button>
+                    </div>
+                    
+                    <!-- Кнопка назад -->
+                    <button class="back-btn" id="backToRoleBtn">← Назад к выбору роли</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="login.js"></script> 
+</body>
+</html>
