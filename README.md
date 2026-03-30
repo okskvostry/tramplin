@@ -31,11 +31,9 @@
 git clone https://github.com/your-username/tramplin.git
 cd tramplin
 
-git clone https://github.com/YOUR_USERNAME/tramplin.git
-cd tramplin
 cp .env.example .env
+
 docker-compose up -d
 
 http://localhost:8080 — главная страница
-
 http://localhost:8081 — phpMyAdmin
